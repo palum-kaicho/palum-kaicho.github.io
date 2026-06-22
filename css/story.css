@@ -1,0 +1,415 @@
+/* =========================================
+   NETFLIX-INSPIRED CINEMATIC STYLE
+========================================= */
+
+:root {
+  --net-black: #08080a;        /* より深いシネマブラック */
+  --net-dark-gray: #14141d;   /* スクリーンの影を表現するダークグレー */
+  --net-red: #E50914;          /* Netflixネオンレッド */
+  --net-red-glow: rgba(229, 9, 20, 0.15);
+  --text-light: #f5f5f7;      /* 視認性の高いホワイト */
+  --text-muted: #a0a0ab;      /* 字幕風のミディアムグレー */
+}
+
+/* 全体設定 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--net-black);
+  color: var(--text-light);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  transition: background 0.3s;
+}
+
+.header-inner {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 36px;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  opacity: 1;
+}
+
+.nav-menu .apply-btn {
+  background-color: var(--net-red);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  opacity: 1;
+  box-shadow: 0 2px 10px rgba(229, 9, 20, 0.4);
+}
+
+.nav-menu .apply-btn:hover {
+  background-color: #ff1523;
+}
+
+/* PC時はハンバーガーボタンを非表示 */
+.hamburger {
+  display: none !important;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero-story {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: 
+    radial-gradient(circle at center, rgba(229, 9, 20, 0.1) 0%, transparent 70%),
+    linear-gradient(to bottom, rgba(8,8,10,0.4) 0%, var(--net-black) 95%);
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.hero-content .tag {
+  color: var(--net-red);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-bottom: 24px;
+  text-shadow: 0 0 12px var(--net-red-glow);
+}
+
+.hero-content h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+}
+
+.hero-content .sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+.scroll .arrow {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--net-red), transparent);
+  margin: 10px auto 0;
+  animation: lineScroll 2s infinite;
+}
+
+@keyframes lineScroll {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* =========================
+   INTRO
+========================= */
+.intro-section {
+  padding: 100px 0 60px;
+}
+
+.prologue-box {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.prologue-box .quote {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.prologue-box .lead-text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* =========================
+   STORY STREAM
+========================= */
+.story-stream {
+  padding-bottom: 60px;
+}
+
+.story-episode {
+  padding: 50px 0;
+}
+
+.episode-card {
+  background-color: var(--net-dark-gray);
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.episode-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(229, 9, 20, 0.3);
+}
+
+.episode-num {
+  display: inline-block;
+  color: var(--net-red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.episode-card h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+  border-left: 3px solid var(--net-red);
+  padding-left: 16px;
+  line-height: 1.4;
+}
+
+.episode-body p {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.episode-body .highlight {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 35px 0;
+  text-align: center;
+  position: relative;
+}
+
+.gimmick-list {
+  list-style: none;
+  padding: 24px 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  margin: 30px 0;
+  border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.gimmick-list li {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.gimmick-list li::before {
+  content: "▶";
+  color: var(--net-red);
+  font-size: 0.7rem;
+  margin-right: 12px;
+}
+
+.gimmick-list li:last-child {
+  margin-bottom: 0;
+}
+
+.credo-box {
+  margin: 35px 0;
+  padding: 20px;
+  background: linear-gradient(90deg, rgba(229, 9, 20, 0.15), transparent);
+  border-left: 2px solid var(--net-red);
+  text-align: center;
+}
+
+.credo-box p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.credo-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta-section {
+  padding: 120px 0;
+  text-align: center;
+  background: linear-gradient(to top, rgba(229, 9, 20, 0.1) 0%, var(--net-black) 100%);
+}
+
+.cta-section h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.apply-button {
+  display: inline-block;
+  background-color: var(--net-red);
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 48px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.apply-button:hover {
+  background-color: #ff1523;
+  transform: scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   📱 RESPONSIVE (スマホ対応・他のCSSの競合を全てねじ伏せる設定)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .episode-card {
+    padding: 35px 24px;
+  }
+  
+  .gimmick-list {
+    padding: 16px 20px;
+  }
+
+  /* ハンバーガーボタンを確実に表示 */
+  .hamburger {
+    display: block !important;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff !important;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 11px; }
+  .hamburger span:nth-child(3) { bottom: 0; }
+
+  /* 三本線変形（X印） */
+  .hamburger.is-active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.is-active span:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+
+  /* メニューの初期状態：他のCSSに邪魔されないよう!importantで隠す */
+  .nav-menu {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;

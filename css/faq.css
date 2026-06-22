@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Gemarisデザイン完全再現版：よくある質問専用スタイル
+   ========================================================================== */
+
+/* 全体の背景を画像のアイボリー・生成りカラーに統一 */
+body.gemaris-theme {
+  background-color: #fdfaf5 !important; /* 画像の温かみのある白 */
+  color: #3a241c !important; 
+}
+
+/* FAQヘッダーエリア */
+.faq-hero-section {
+  padding: 40px 20px 10px !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+/* 👑 キャラクター画像設置エリア（サイズを最大化してインパクトを出す調整） */
+.faq-char-container {
+  max-width: 520px !important; /* コンテナの上限を520pxまで引き上げ */
+  width: 95% !important;        /* スマホ画面でも横幅いっぱいに近く広げる */
+  margin: 0 auto !important;
+}
+
+.faq-char-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 8px !important; /* 角をほんのり丸くして馴染ませる */
+}
+
+/* FAQリストコンテナ */
+.faq-section .faq-list {
+  max-width: 820px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  padding: 0 15px !important;
+}
+
+/* 画像の「二重飾り枠」ボックスをCSSで完全再現 */
+.faq-section .faq-item {
+  background: #ffffff !important;
+  border: 1px solid #c9b195 !important; /* 外側のゴールドベージュ枠線 */
+  border-radius: 10px !important;
+  padding: 22px 28px !important;
+  position: relative !important;
+  box-shadow: 0 4px 15px rgba(160, 130, 100, 0.06) !important;
+  box-sizing: border-box !important;
+}
+
+/* 内側の細い飾り枠線（擬似要素で二重線を表現） */
+.faq-section .faq-item::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  border: 1px solid #f0e6da !important;
+  border-radius: 7px !important;
+  pointer-events: none !important;
+}
+
+/* 質問エリア（Q） */
+.faq-section .faq-question {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+}
+
+/* ワインレッド×金縁のダイヤ型バッジを完全再現 */
+.faq-section .faq-q-badge {
+  background: #6a1b1b !important; 
+  color: #ffffff !important;
+  font-family: 'Georgia', serif !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  transform: rotate(45deg) !important; /* ダイヤ型に回転 */
+  flex-shrink: 0 !important;
+  border: 1px solid #dfc49f !important; /* 金色の縁取り */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* ダイヤの中の数字の傾きを戻す */
+.faq-section .faq-q-badge::after {
+  content: '';
+}
+
+.faq-section .faq-question h2 {
+  font-size: 18px !important;
+  color: #6a1b1b !important; /* テキスト色を画像と同じ上品な赤に */
+  font-weight: bold !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  transform: rotate(0deg) !important; 
+}
+
+/* 回答エリア（A）：画像の赤みがあるドット区切り線を再現 */
+.faq-section .faq-answer {
+  padding-top: 15px !important;
+  margin-top: 15px !important;
+  border-top: 1px dotted #c9b195 !important; 
+  position: relative !important;
+}
+
+/* 右端の小さなクリスタル（♦マーク）の演出 */
+.faq-section .faq-item::after {
+  content: '♦' !important;
+  position: absolute !important;
+  right: 15px !important;
+  top: 25px !important;
+  color: #c9b195 !important;
+  font-size: 10px !important;
+  opacity: 0.7 !important;
+}
+
+.faq-section .faq-answer p {
+  font-size: 14.5px !important;
+  color: #4a3329 !important; /* 読みやすい少し濃いめの茶色 */
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* 📱 スマホ用レスポンシブ調整（画面が狭くなっても絶対綺麗！） */
+@media screen and (max-width: 768px) {
+  /* 👑 スマホ時はイラストのコンテナ幅を最大化 */
+  .faq-char-container {
+    max-width: 100% !important;
+    width: 100% !important; /* 横幅いっぱいに表示させて小さくなるのを防ぐ */
+  }
+
+  .faq-section .faq-item {
+    padding: 16px 18px !important;
+  }
+
+  /* スマホでは右側のマークを非表示にしてテキスト領域を確保 */
+  .faq-section .faq-item::after {
+    display: none !important;
+  }
+
+  .faq-section .faq-question h2 {
+    font-size: 15px !important;
+    display: block !important;
+  }
+
+  .faq-section .faq-answer p {
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* スマホ用ダイヤバッジ微縮小 */
+  .faq-section .faq-q-badge {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 11px !important;
+  }
+}

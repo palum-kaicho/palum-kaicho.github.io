@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   MAIN CONTENT CARDS (高級カード化の共通土台)
+   ========================================================================== */
+.top-content-navigator {
+  padding: 60px 0;
+  background-color: var(--gem-white, #faf7f2);
+}
+
+.content-nav-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* カード同士の心地よい間隔 */
+}
+
+/* ラグジュアリーなカード型コンテナ */
+.main-content-card {
+  background: #ffffff;
+  border: 1px solid rgba(229, 221, 209, 0.6);
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 15px 45px rgba(215, 201, 182, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.25);
+}
+
+/* カード内のヘッダーデザイン */
+.card-header-luxury {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(229, 221, 209, 0.4);
+  padding-bottom: 15px;
+}
+
+.card-header-luxury span {
+  font-size: 0.85rem;
+  color: var(--gem-red, #9c2a2a);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card-header-luxury h2 {
+  font-size: 1.8rem;
+  color: var(--gem-black, #2b2b2b);
+  font-weight: 600;
+}
+
+.card-lead-text {
+  font-size: 1.1rem;
+  color: var(--gem-gray, #555555);
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+/* 下部カード用ボタンの共通ラッパー（PC版の配置） */
+.card-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+/* キミが作った最強に美しい赤茶色の高級ボタン本体スタイル */
+.gemaris-luxury-final-btn {
+  display: inline-block;
+  background: #6a1b1b; /* 上品な赤茶色 */
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 50px;
+  border-radius: 50px; /* 綺麗な丸み */
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  box-shadow: 0 8px 20px rgba(106, 27, 27, 0.3);
+  transition: all 0.3s ease;
+}
+
+.gemaris-luxury-final-btn:hover {
+  background: #822424; /* ホバー時に少し明るく */
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(106, 27, 27, 0.4);
+}
+
+
+/* ==========================================================================
+   🖼️ メインビジュアル内のボタン（透明リンク）の基準座標設定
+   ========================================================================== */
+.visual-overlay-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 560px; /* 画像の本来のサイズ感に合わせる */
+  margin: 0 auto !important;
+}
+
+.map-replacement-link {
+  position: absolute !important;
+  display: block !important;
+  background: rgba(255, 255, 255, 0) !important; /* 完全に透明 */
+  z-index: 999 !important; /* タップ判定を最前面に引っ張り出す */
+  cursor: pointer !important;
+}
+
+/* 💻【PC表示時】の透明リンク位置 */
+.link-apply {
+  width: 74% !important;
+  height: 11% !important;
+  left: 13% !important;
+  top: 64% !important;
+}
+
+.link-discord {
+  width: 74% !important;
+  height: 11% !important;
+  left: 13% !important;
+  top: 77% !important;
+}
+
+
+/* ==========================================================================
+   WANTED SECTION SPECIFIC (ライバー募集エリアのPCレイアウト)
+   ========================================================================== */
+.recruit-luxury-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: rgba(250, 247, 242, 0.5);
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px dashed rgba(229, 221, 209, 0.8);
+}
+
+.recruit-luxury-text {
+  flex: 1;
+}
+
+.recruit-luxury-badge {
+  display: inline-block;
+  background: var(--gem-red, #9c2a2a);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+}
+
+.recruit-luxury-text h3 {
+  font-size: 1.5rem;
+  color: var(--gem-black, #2b2b2b);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.recruit-luxury-desc {
+  font-size: 0.95rem;
+  color: var(--gem-gray, #555555);
+  line-height: 1.8;
+}
+
+/* PC時のイラストコンテナ */
+.recruit-luxury-image {
+  flex-shrink: 0;
+  width: 240px;
+}
+
+.recruit-luxury-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+/* ==========================================================================
+   📱 RESPONSIVE STYLE (スマホ画面向けの超絶最適化)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  
+  /* カード全体のパディングをスマホ用にスリム化 */
+  .main-content-card {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+
+  .card-header-luxury h2 {
+    font-size: 1.4rem;
+  }
+
+  .card-lead-text {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  /* WANTEDエリアのレイアウトをスマホ用に縦並び＆中央寄せ */
+  .recruit-luxury-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .recruit-luxury-text {
+    width: 100% !important;
+  }
+
+  .recruit-luxury-text h3 {
+    font-size: 1.25rem;
+  }
+
+  /* イラストをスマホ画面の幅に合わせて限界までデカく解放！ */
+  .recruit-luxury-image {
+    width: 100% !important;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .recruit-luxury-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(215, 201, 182, 0.25);
+  }
+
+  /* スマホ版の赤茶色ボタンサイズ・位置の微調整 */
+  .gemaris-luxury-final-btn {
+    font-size: 1.0rem;
+    padding: 14px 40px;
+    width: 90%;
+    text-align: center;
+  }
+
+  /* WANTEDカード用のボタンラッパーのみ中央寄せ */
+  .main-content-card .card-btn-wrap {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     💡 【ガチガチ修正】縄張りを完全に独立！スマホのズレを完璧に封殺する座標
+     ------------------------------------------------------------------------ */
+  .link-apply {
+    width: 61.5% !important;   /* ボタン画像の本来の横幅にジャストフィット */
+    height: 7.2% !important;   /* 縦幅をコンパクトにして、下のボタンを絶対に侵略しない */
+    left: 19.3% !important;    /* 左右のド真ん中に配置 */
+    top: 79.5% !important;     /* スマホ時の『応募はこちら』の絵の真上 */
+  }
+
+  .link-discord {
+    width: 61.5% !important;   /* ディスコードボタンの横幅にジャストフィット */
+    height: 7.2% !important;   /* 縦幅をジャストに */
+    left: 19.3% !important;    /* 左右の位置を統一 */
+    top: 87.8% !important;     /* スマホ時の『Discordに参加する』の絵の真上 */
+  }
+}

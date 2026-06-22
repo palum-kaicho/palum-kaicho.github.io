@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Gemarisデザイン完全再現版：サポート専用スタイル（画像特化型）
+   ========================================================================== */
+
+/* 全体の背景をFAQ・プラン同様の美しい生成りカラーに統一 */
+body.gemaris-theme {
+  background-color: #fdfaf5 !important;
+  color: #3a241c !important; 
+}
+
+/* 導入テキストエリア */
+.support-intro-section {
+  padding: 60px 20px 20px !important;
+  text-align: center !important;
+}
+
+.section-lead-custom {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #4a342c !important;
+  text-align: center !important;
+}
+
+/* 🖼️ サポート画像エリア（2枚を縦に美しく並べる） */
+.support-images-section {
+  padding: 10px 0 60px !important;
+}
+
+.support-images-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 50px !important; /* 画像と画像の間の心地いい隙間 */
+  max-width: 560px !important; /* 画像の元のクオリティを保つ最適な横幅 */
+  width: 95% !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+.support-img-box {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.support-main-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 8px !important; /* 枠の角をほんのり丸くして高級感を */
+}
+
+/* 📱 スマホ用レスポンシブ調整 */
+@media screen and (max-width: 768px) {
+  .support-intro-section {
+    padding: 30px 15px 10px !important;
+  }
+
+  .section-lead-custom {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: left !important; /* スマホでは左寄せの方が見やすい */
+  }
+
+  .support-images-inner {
+    width: 100% !important;
+    padding: 0 10px !important;
+    gap: 35px !important; /* スマホ時は隙間を少し詰める */
+  }
+}

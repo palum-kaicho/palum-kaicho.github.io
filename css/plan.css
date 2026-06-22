@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Gemarisデザイン完全再現版：契約プラン専用スタイル（画像特化型）
+   ========================================================================== */
+
+/* 全体の背景をFAQ同様の生成りカラーに統一 */
+body.gemaris-theme {
+  background-color: #fdfaf5 !important;
+  color: #3a241c !important; 
+}
+
+/* プラン画像エリア（スマホでも小さくならんように横幅を最大化） */
+.plan-hero-section {
+  padding: 40px 20px 10px !important;
+  text-align: center !important;
+}
+
+.plan-char-container {
+  max-width: 560px !important; /* 横幅の上限を少し広げて見やすく */
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+.plan-char-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 8px !important;
+}
+
+/* 注記セクションの調整 */
+.plan-note-section {
+  padding: 10px 0 30px !important;
+}
+
+.comparison-note {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  font-size: 14px !important;
+  color: #666666 !important;
+  text-align: center !important;
+  padding: 0 20px !important;
+  line-height: 1.6 !important;
+}
+
+/* 📱 スマホ用レスポンシブ調整 */
+@media screen and (max-width: 768px) {
+  .plan-hero-section {
+    padding: 20px 10px 5px !important;
+  }
+
+  .plan-char-container {
+    max-width: 100% !important;
+    width: 100% !important; /* スマホ画面の横幅いっぱいにドカンと表示 */
+  }
+
+  .comparison-note {
+    font-size: 12.5px !important;
+  }
+}

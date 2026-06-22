@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Gemarisデザイン完全再現版：ライバー募集専用スタイル
+   ========================================================================== */
+
+/* 全体の背景をFAQ・プラン・サポート同様の生成りカラーに統一 */
+body.gemaris-theme {
+  background-color: #fdfaf5 !important;
+  color: #3a241c !important; 
+}
+
+.recruit-page-wrapper {
+  padding: 40px 0 60px !important;
+}
+
+/* 熱いメッセージセクション */
+.section-message {
+  text-align: center !important;
+  margin-bottom: 50px !important;
+  padding: 0 20px !important;
+}
+
+.section-message h2 {
+  font-family: 'Georgia', 'Times New Roman', 'Noto Serif JP', serif !important;
+  font-size: 28px !important;
+  color: #6a1b1b !important; /* Gemarisワインレッド */
+  line-height: 1.5 !important;
+  font-weight: bold !important;
+  margin-bottom: 25px !important;
+}
+
+.section-message .main-text p {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  color: #4a342c !important;
+  margin-bottom: 15px !important;
+  max-width: 750px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 👑 WANTED画像エリア（縮こまりを完全に防ぐ！） */
+.recruit-image-section {
+  padding: 10px 20px 40px !important;
+  text-align: center !important;
+}
+
+.recruit-char-container {
+  max-width: 560px !important; /* イラストのクオリティを最大に活かす幅 */
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+.recruit-char-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 8px !important;
+}
+
+/* 💬 キャラクター応援エリア（画像の額縁風2重線デザインを完全再現） */
+.section-characters {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 40px !important;
+  max-width: 860px !important;
+  margin: 0 auto 50px !important;
+  padding: 0 20px !important;
+}
+
+.char-box {
+  flex: 1 !important;
+  background: #ffffff !important;
+  border: 1px solid #c9b195 !important; /* ゴールドベージュ外枠 */
+  border-radius: 12px !important;
+  padding: 25px 20px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-shadow: 0 4px 15px rgba(160, 130, 100, 0.05) !important;
+}
+
+/* 内側の2重飾り線 */
+.char-box::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  right: 5px !important;
+  bottom: 5px !important;
+  border: 1px solid #f0e6da !important;
+  border-radius: 9px !important;
+  pointer-events: none !important;
+}
+
+/* 吹き出し風の文字エリア */
+.balloon {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #3a241c !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.char-img {
+  max-width: 140px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin-top: auto !important;
+  z-index: 1 !important;
+}
+
+/* 注記セクション */
+.recruit-note-section {
+  max-width: 600px !important;
+  margin: 0 auto 40px !important;
+  padding: 0 20px !important;
+}
+
+.recruit-note {
+  font-size: 13px !important;
+  color: #666666 !important;
+  text-align: center !important;
+  line-height: 1.6 !important;
+}
+
+/* 🚀 ボタンエリア */
+.section-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  padding: 0 20px !important;
+}
+
+.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 15px 35px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  border-radius: 30px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+.btn-red {
+  background: #6a1b1b !important;
+  color: #ffffff !important;
+  border: 1px solid #e5c38c !important;
+}
+.btn-red:hover {
+  background: #521313 !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-discord {
+  background: #5865F2 !important;
+  color: #ffffff !important;
+}
+.btn-discord:hover {
+  background: #3b47c4 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 📱 スマホ用レスポンシブ調整（超重要！） */
+@media screen and (max-width: 768px) {
+  .section-message h2 {
+    font-size: 22px !important;
+  }
+
+  .section-message .main-text p {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+
+  .recruit-char-container {
+    max-width: 100% !important;
+    width: 100% !important; /* スマホ画面いっぱいに表示 */
+  }
+
+  /* キャラクターボックスを縦並びにする */
+  .section-characters {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .char-box {
+    width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  .balloon {
+    font-size: 13px !important;
+  }
+
+  .char-img {
+    max-width: 110px !important;
+  }
+
+  /* ボタンもスマホでは縦並びにしてタップしやすく */
+  .section-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+
+  .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+  }
+}
+/* イメージマップのボタン部分をマウスホバーした時に指マークにする */
+map area {
+  cursor: pointer !important;
+}

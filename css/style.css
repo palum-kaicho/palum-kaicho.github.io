@@ -1,0 +1,776 @@
+/* ==========================================================================
+   VARIABLES & RESET
+   ========================================================================== */
+:root {
+  --gem-red: #D6001C;
+  --gem-red-dark: #B50018;
+  --gem-black: #1F1A1A;
+  --gem-gray: #554D4D;
+  --gem-paper: #FCFAF6;
+  --gem-paper-light: #FDFCF9;
+  --gem-border: #E5DDD1;
+  --discord: #5865F2;
+  --shadow: 0 15px 45px rgba(215, 201, 182, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Times New Roman", "Noto Serif JP", "Hiragino Mincho ProN", "Hiragino Sans", serif;
+  color: var(--gem-black);
+  line-height: 2.0;
+  letter-spacing: 0.05em;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(243, 237, 226, 0.45), transparent 80%),
+    radial-gradient(circle at 90% 80%, rgba(229, 216, 193, 0.35), transparent 80%),
+    var(--gem-paper);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   LAYOUT & COMMON
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  font-weight: 600;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--gem-red);
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 999px;
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+.section-lead {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: var(--gem-gray);
+  font-size: 1.05rem;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(252, 250, 246, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(229, 221, 209, 0.6);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--gem-black);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: .3s;
+}
+
+.nav-menu a:hover {
+  color: var(--gem-red);
+}
+
+.apply-btn {
+  background: var(--gem-red);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.button {
+  display: inline-block;
+  padding: 16px 36px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: .3s ease;
+}
+
+.apply-button {
+  background: var(--gem-red);
+  color: white;
+  box-shadow: 0 8px 25px rgba(214, 0, 28, 0.2);
+}
+
+.apply-button:hover {
+  background: var(--gem-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(214, 0, 28, 0.3);
+}
+
+.discord-button {
+  background: var(--discord);
+  color: white;
+}
+
+.discord-button:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.hero-logo-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  max-width: 90vw;
+  transform: translate(-50%,-50%);
+  opacity: .03;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-logo {
+  height: 200px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.hero-category {
+  color: var(--gem-red-dark);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-category::before,
+.hero-category::after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--gem-border);
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--gem-black);
+  line-height: 1.6;
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero-buttons {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   CARDS & GRIDS
+   ========================================================================== */
+.concept-card,
+.origin-card,
+.support-card,
+.plan-card,
+.manual-card,
+.company-link-card,
+.business-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(229, 221, 209, 0.6);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+  transition: .3s ease;
+  color: var(--gem-black) !important;
+}
+
+.concept-card:hover,
+.origin-card:hover,
+.support-card:hover,
+.plan-card:hover,
+.manual-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.35);
+}
+
+.concept-card p, .origin-card p, .support-card p, .plan-card p, .manual-card p, .company-link-card p, .business-card p,
+.concept-card li, .origin-card li, .support-card li, .plan-card li, .manual-card li {
+  color: var(--gem-gray) !important;
+  opacity: 1 !important;
+}
+
+.concept-grid, .support-grid, .manual-grid, .business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.origin-message {
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(229, 221, 209, 0.6);
+  border-radius: 16px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  color: var(--gem-black) !important;
+}
+
+/* ==========================================================================
+   🛠️ STAFF TEASER SECTION (イラストはみ出し完全修正版)
+   ========================================================================== */
+.company-link-card {
+  background: #ffffff !important;
+  border: 1px solid #E5DDD1 !important;
+  border-radius: 24px !important;
+  padding: 50px 40px !important;
+  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.2) !important;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.staff-teaser-img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 30px auto;
+}
+
+/* ==========================================================================
+   🛠️ EQUIPMENT & SUPPORT ITEM GRID (配信活動サポート)
+   ========================================================================== */
+.support-item-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.support-item-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.support-item-imgbox {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(215, 201, 182, 0.2);
+  margin-bottom: 15px;
+}
+
+.support-item-imgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.support-item-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1F1A1A;
+}
+
+/* ==========================================================================
+   🛠️ EXPENSE SUBSIDY GRID (経費補助制度)
+   ========================================================================== */
+.expense-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.expense-card-item {
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  background: #ffffff;
+  border: 1px solid #E5DDD1;
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(215, 201, 182, 0.25);
+}
+
+.expense-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.expense-card-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1F1A1A;
+  margin: 0;
+}
+
+/* ==========================================================================
+   🛠️ FAQ SECTION
+   ========================================================================== */
+.faq-iris {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-iris-img {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.faq-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #E5DDD1;
+  border-left: 5px solid #E50914;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(215, 201, 182, 0.15);
+  text-align: left;
+}
+
+.faq-item h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1F1A1A;
+}
+
+.faq-item p {
+  margin: 0;
+  padding-left: 24px;
+  color: #554D4D;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   🛠️ RECRUIT TEASER SECTION (スマホパツパツ解消版)
+   ========================================================================== */
+.recruit-teaser-section {
+  padding: 80px 0;
+  background: #fdfbf7;
+}
+
+.recruit-teaser-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.recruit-teaser-card {
+  background: #ffffff;
+  border: 1px solid #E5DDD1;
+  border-radius: 24px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.recruit-teaser-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.recruit-teaser-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.recruit-teaser-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.recruit-teaser-badge {
+  background: #E50914;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.recruit-teaser-text h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1F1A1A;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.recruit-teaser-desc {
+  color: #554D4D;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.recruit-teaser-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #1F1A1A;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ==========================================================================
+   🛠️ STORY / INTERVIEW SECTION (ボタン感・リッチ誘導版)
+   ========================================================================== */
+.story-section {
+  background: #fdfbf7;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.story-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #E5DDD1;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(215, 201, 182, 0.15);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 180px;
+}
+
+.story-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #554D4D;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.story-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1F1A1A;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.story-card p {
+  font-size: 0.95rem;
+  color: #554D4D;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.story-more {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1F1A1A;
+  display: inline-flex;
+  align-items: center;
+}
+
+.story-more::after {
+  content: "→";
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(215, 201, 182, 0.4);
+  border-color: #1F1A1A;
+}
+
+.story-card:hover h3 {
+  color: #E50914;
+}
+
+.story-card:hover .story-more::after {
+  transform: translateX(6px);
+}
+
+.story-cta-card {
+  border: 2px dashed #E50914;
+  background: rgba(229, 9, 20, 0.02);
+}
+
+.story-cta-card h3 { color: #E50914; }
+.story-cta-card .cta-tag {
+  color: #E50914;
+  background: rgba(229, 9, 20, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.story-cta-card .story-more { color: #E50914; }
+
+/* ==========================================================================
+   🛠️ CTA SECTION (隙間＆等幅スマホ最適化)
+   ========================================================================== */
+.cta-section {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-section .apply-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #E50914;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.2);
+  min-width: 200px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   DISCORD & FOOTER
+   ========================================================================== */
+.discord-section { text-align: center; }
+.footer { padding: 6px 0; background: var(--gem-paper-light); border-top: 1px solid var(--gem-border); text-align: center; }
+.footer-logo img { height: 40px; margin: 0 auto 20px; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-links a { color: var(--gem-black); font-size: 0.9rem; }
+.copyright { margin-top: 20px; font-size: 0.8rem; color: var(--gem-gray); }
+
+/* ==========================================================================
+   📱 RESPONSIVE (スマホ対応・メディアクエリ)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .section { padding: 80px 0; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+
+  .concept-grid, .support-grid, .manual-grid, .business-grid, .plan-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* 💡 ハンバーガーメニュー周りの不具合完全撲滅指定 */
+  .hamburger {
+    display: block !important;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #1F1A1A;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 11px; }
+  .hamburger span:nth-child(3) { bottom: 0; }
+
+  /* 💡 ボタン押下時に三本線を「✕」に変形 */
+  .hamburger.is-active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+  .hamburger.is-active span:nth-child(2) { opacity: 0; }
+  .hamburger.is-active span:nth-child(3) { transform: translateY(-12px) rotate(-45deg); }
+
+  /* 💡 display: none から !important を排除してJSでの展開を許可 */
+  .nav-menu {
+    display: none; 
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(252, 250, 246, 0.98);
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(229, 221, 209, 0.6);
+    z-index: 9999;
+  }
+  
+  /* 開いた時は!important付きで強制表示 */
+  .nav-menu.is-active {
+    display: flex !important;
+  }
+  
+  .apply-btn { width: 100%; text-align: center; }
+
+  /* スタッフカードスマホ余白 */
+  .company-link-card { padding: 30px 20px !important; margin: 30px 15px 0 !important; }
+  .staff-teaser-img { max-width: 240px; }
+
+  /* 募集 teaser スマホ最適化 */
+  .recruit-teaser-section { padding: 50px 0; }
+  .recruit-teaser-card { padding: 30px 20px; gap: 25px; }
+  .recruit-teaser-text, .recruit-teaser-image { min-width: 100%; }
+  .recruit-teaser-text h3 { font-size: 1.35rem; }
+  .recruit-teaser-desc { font-size: 0.95rem; }
+  .recruit-teaser-btn-wrap { text-align: center; }
+  .recruit-teaser-btn { width: 100%; max-width: 280px; }
+
+  /* STORYカードスマホ最適化 */
+  .story-grid { gap: 20px; }
+  .story-card { padding: 30px 24px; }
+  .story-card-inner { min-height: 140px; }
+  .story-card h3 { font-size: 1.25rem; }
+
+  /* CTA縦並び＆等幅 */
+  .cta-buttons { flex-direction: column; gap: 15px; padding: 0 20px; }
+  .cta-section .apply-button { width: 100%; max-width: 300px; margin: 0 auto; }
+}
