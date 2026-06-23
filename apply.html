@@ -244,20 +244,29 @@ class="apply-form">
     </div>
   </div>
 
-<!-- 連絡可能なSNSの詳細入力欄 -->
-  <div class="form-group">
-    <label>
-      連絡可能なSNSのID、リンク等 <span class="badge-optional">任意</span>
-    </label>
-    <textarea name="contact_sns_detail" rows="3" placeholder="例：XのIDは@xxxxx、LINEの登録URLは〜 など、上記でチェックを入れたツールの情報を入力してください"></textarea>
+<div class="form-group" style="
+  border: 1px solid #f3ebe1;
+  background-color: #fdfcf9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+">
+  <label style="margin-bottom: 4px;">
+    連絡先アカウント情報 <span class="badge-required">どちらか片方必須</span>
+  </label>
+  <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px; line-height: 1.4;">
+    上記でチェックを入れたSNSの「ID・リンクの入力」をするか、または「QRコード画像」を添付してください。
+  </p>
+
+  <div style="width: 100%; margin-bottom: 15px;">
+    <span style="font-size: 0.85rem; font-weight: bold; color: #2b2b2b; display: block; margin-bottom: 6px;">方法A：IDや登録用リンクを入力する</span>
+    <textarea name="contact_sns_detail" id="js-sns-detail" rows="3" placeholder="例：XのIDは@xxxxx、LINEの登録URLは〜 など"></textarea>
   </div>
 
-  <!-- 👑【新規追加】QRコード画像アップロード項目 -->
-  <div class="form-group">
-    <label>
-      連絡用SNSのQRコード添付 <span class="badge-optional">任意</span>
-    </label>
-    <input type="file" name="sns_qr_code" accept="image/*" style="
+  <div style="width: 100%;">
+    <span style="font-size: 0.85rem; font-weight: bold; color: #2b2b2b; display: block; margin-bottom: 6px;">方法B：アカウントのQRコード画像を添付する</span>
+    <input type="file" name="sns_qr_code" id="js-sns-qr" accept="image/*" style="
       width: 100%;
       box-sizing: border-box;
       padding: 10px;
@@ -266,8 +275,9 @@ class="apply-form">
       background-color: #fff9f9;
       cursor: pointer;
     ">
-    <span style="font-size: 0.8rem; color: #666; margin-top: 4px;">※LINEやDiscordなどのQRコード画像・スクリーンショットがあればここに添付してください（マイページからの画像選択に対応しています）</span>
+    <span style="font-size: 0.75rem; color: #888; display: block; margin-top: 4px;">※LINEやDiscordなどのQRコード画面のスクリーンショットでもOKです</span>
   </div>
+</div>
 
   <!-- 👑【仕様変更】応募理由を必須から「任意」へ変更 -->
   <div class="form-group">
@@ -375,6 +385,27 @@ class="apply-form">
             navMenu.classList.remove('is-active');
         });
     });
+    // 🌟 SNS連絡先の「片方必須」チェック処理
+    const applyForm = document.getElementById('js-apply-form');
+    const snsDetail = document.getElementById('js-sns-detail');
+    const snsQr = document.getElementById('js-sns-qr');
+
+    if (applyForm) {
+        applyForm.addEventListener('submit', (event) => {
+            // テキスト入力のトリム（空白除去）とファイルの選択状態をチェック
+            const hasText = snsDetail.value.trim() !== '';
+            const hasFile = snsQr.files.length > 0;
+
+            // 両方とも空っぽだったら送信をブロックするで！
+            if (!hasText && !hasFile) {
+                event.preventDefault(); // 送信を中止
+                alert('【連絡先アカウント情報】のご入力をお願いします。\n「方法A：IDやリンクの入力」または「方法B：QRコード画像の添付」のどちらか片方は必須となります！');
+                
+                // ユーザーが気づきやすいように枠に一瞬フォーカスを当てる
+                snsDetail.focus();
+            }
+        });
+    }
 </script>
 </body>
 
