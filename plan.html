@@ -53,18 +53,48 @@
   </div>
 </section>
 
-<!-- CTAセクション -->
-<section class="cta-section section">
-  <div class="container">
-    <h2>あなたに合ったプランでスタート！</h2>
-    <p class="section-lead">活動の方向性に悩んでいる方も、まずはお気軽にご相談ください。</p>
-    <div class="cta-buttons">
-      <a href="apply.html" class="button apply-button">このプランでライバー応募</a>
-      <a href="https://discord.gg/XXXXXXXX" target="_blank" class="button discord-button">Discordで相談する</a>
+<!-- =========================
+     👑 新・CTAセクション（画像差し替え＆完全レスポンシブ版）
+     ========================= -->
+<section class="cta-section section" style="padding: 60px 0; background-color: #faf7f2;">
+  <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
+    
+    <!-- 💡 画像と透明リンクを内包する基準コンテナ -->
+    <div class="cta-image-wrapper" style="position: relative; width: 100%; max-width: 560px; margin: 0 auto;">
+      
+      <!-- 添付イラスト「index-plan.png」を表示 -->
+      <img src="images/index-plan.png" alt="あなたに合ったプランでスタート！" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.3);">
+      
+      <!-- 👑 ライバー応募ボタン用の透明なリンクエリア -->
+      <a href="apply.html" class="cta-invisible-link link-apply" style="
+        position: absolute;
+        display: block;
+        width: 74%;
+        height: 11%;
+        left: 13%;
+        top: 60.5%;
+        background: rgba(255, 255, 255, 0);
+        z-index: 10;
+        cursor: pointer;
+      " aria-label="プランを選んでライバー応募"></a>
+      
+      <!-- 👑 Discord相談ボタン用の透明なリンクエリア -->
+      <a href="https://discord.gg/XXXXXXXX" target="_blank" class="cta-invisible-link link-discord" style="
+        position: absolute;
+        display: block;
+        width: 74%;
+        height: 11%;
+        left: 13%;
+        top: 77.5%;
+        background: rgba(255, 255, 255, 0);
+        z-index: 10;
+        cursor: pointer;
+      " aria-label="Discordで相談する"></a>
+      
     </div>
+
   </div>
 </section>
-
 <footer class="footer">
   <div class="container">
     <div class="footer-logo">
