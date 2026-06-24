@@ -8,7 +8,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=1,600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/interview.css">
 </head>
@@ -25,14 +25,13 @@
     </button>
 
     <nav class="nav-menu" id="js-nav-menu">
-      <a href="#about">Gemarisとは</a>
-      <a href="#support">サポート</a>
-      <a href="#plans">契約プラン</a>
-      <a href="#faq">FAQ</a>
-      <a href="company.html">企業概要</a>
-      <a href="recruit.html">ライバー募集</a>
-      <a href="staff.html">スタッフ紹介</a>
-      <a href="apply.html" class="apply-btn">応募する</a>
+      <a href="index.html">TOP</a>
+      <a href="index.html#plans">サポート・プラン</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#recruit-teaser">リクルート</a>
+      <a href="index.html#story-section">インタビュー</a>
+      <a href="index.html#staff-teaser">スタッフ</a>
+      <a href="apply.html" class="apply-btn">応募はこちら</a>
     </nav>
   </div>
 </header>
@@ -141,7 +140,7 @@
           <h2><span>Q.07</span>マネージャーとしての考え方</h2>
         </div>
         <div class="answer">
-          <p>まずは「ライバーの気持ちに100%寄り添うこと」。モラルや方針として間違っていることは伝えつつ、背景まで一緒に考えることを大事にしています。</p>
+          <p>まずは「ライバーの気持ちに100%寄り嫌うこと」。モラルや方針として間違っていることは伝えつつ、背景まで一緒に考えることを大事にしています。</p>
           <p>接着して「適切な目標設定」と「継続」。今のステップに合ったロードマップを提示することが重要だと考えています。</p>
         </div>
       </article>
@@ -164,40 +163,75 @@
     <div class="container">
       <h2>この思想に、共感しますか？</h2>
       <p class="cta-lead">ただの配信ではなく、“表現”として戦う世界へ。</p>
-      <a href="apply.html" class="magazine-btn">応募する</a>
+      <a href="apply.html?job=driver" class="magazine-btn">オーディションに応募する</a>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
+      <div class="footer-sub-links" style="text-align: center; margin-bottom: 15px;">
+        <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
+        <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
+      </div>
       <p>&copy; 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
   </footer>
 
+<!-- 1. </head> の直前に以下のスタイルを追加して、追従の基盤を作るやで！ -->
+<style>
+  .header {
+    position: fixed !important; /* 絶対配置から固定配置に昇格！ */
+    background: #f8f7f4 !important; /* スクロールしても透けないように雑誌の白を敷く */
+    transition: transform 0.3s ease, background-color 0.3s ease !important;
+  }
+  /* ヘッダーが隠れる時のクラス */
+  .header.is-hide {
+    transform: translateY(-100%) !important;
+  }
+</style>
+
+<!-- 2. ファイル最下部の <script> 〜 </script> を以下に丸ごと差し替え！ -->
 <script>
     const hamburger = document.getElementById('js-hamburger');
     const navMenu = document.getElementById('js-nav-menu');
+    const header = document.querySelector('.header');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('is-active');
-        navMenu.classList.toggle('is-active');
-    });
-
-    window.addEventListener('pageshow', (event) => {
-        if (navMenu) {
-            navMenu.classList.remove('is-active');
-        }
-        if (hamburger) {
-            hamburger.classList.remove('is-active');
-        }
-    });
-
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('is-active');
-            hamburger.classList.remove('is-active');
+    // --- ① ハンバーガーメニューの開閉（完全連動） ---
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            navMenu.classList.toggle('is-active');
         });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('is-active');
+                hamburger.classList.remove('is-active');
+            });
+        });
+    }
+
+    window.addEventListener('pageshow', () => {
+        if (navMenu) navMenu.classList.remove('is-active');
+        if (hamburger) hamburger.classList.remove('is-active');
+    });
+
+    // --- ② スマートヘッダー（スクロールで出没） ---
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        // スマホメニューが開いている時はヘッダーを隠さない
+        if (navMenu && navMenu.classList.contains('is-active')) return;
+
+        if (window.scrollY > lastScrollY && window.scrollY > 150) {
+            // ページダウンで隠す
+            header.classList.add('is-hide');
+        } else {
+            // ページアップで復活
+            header.classList.remove('is-hide');
+        }
+        lastScrollY = window.scrollY;
     });
 </script>
 </body>

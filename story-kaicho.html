@@ -6,18 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>所属ライバーの思想｜エンタメで頂点へ｜Gemaris</title>
   <meta name="description" content="配信歴11年の所属ライバーが語る、エンタメ哲学とPalmuへの挑戦">
-  <!-- Google Fontsから映画風の明朝体とゴシック体を取得 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/story.css">
+
+  <style>
+    /* --- ① スマートヘッダーの基本設定 --- */
+    .header {
+      background: transparent !important; /* 初期状態は透明にして映画風ビジュアルを活かす */
+      transition: transform 0.3s ease, background-color 0.3s ease !important;
+    }
+    
+    /* スクロールダウンで隠す用 */
+    .header.is-hide {
+      transform: translateY(-100%) !important;
+    }
+
+    /* --- ② スマホでメニューを開いたときの超強力上書き設定 --- */
+    @media screen and (max-width: 768px) {
+      /* メニュー背景が真っ黒（あるいは超高透過黒）のとき、中の文字を強制的に純白化！ */
+      .nav-menu.is-active a {
+        color: #ffffff !important;
+        opacity: 1 !important;
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2) !important; /* ほんのり光らせて視認性UP */
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+
+      /* 応募するボタンだけはNetflixレッドで目立たせる */
+      .nav-menu.is-active a.apply-btn {
+        background-color: #E50914 !important;
+        color: #ffffff !important;
+        padding: 12px 24px !important;
+        border-radius: 4px !important;
+        max-width: 280px !important;
+        margin: 10px auto 0 !important;
+        box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4) !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
 <header class="header">
   <div class="container header-inner">
     <a href="index.html">
@@ -29,23 +64,19 @@ HEADER
     </button>
 
     <nav class="nav-menu" id="js-nav-menu">
-      <a href="#about">Gemarisとは</a>
-      <a href="#support">サポート</a>
-      <a href="#plans">契約プラン</a>
-      <a href="#faq">FAQ</a>
-      <a href="company.html">企業概要</a>
-      <a href="recruit.html">ライバー募集</a>
-      <a href="staff.html">スタッフ紹介</a>
-      <a href="apply.html" class="apply-btn">応募する</a>
+      <a href="index.html">TOP</a>
+      <a href="index.html#plans">サポート・プラン</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#recruit-teaser">リクルート</a>
+      <a href="index.html#story-section">インタビュー</a>
+      <a href="index.html#staff-teaser">スタッフ</a>
+      <a href="apply.html" class="apply-btn">応募はこちら</a>
     </nav>
   </div>
 </header>
 
 
 
-<!-- =========================
-HERO（映画のメインビジュアル・予告風）
-========================= -->
 <section class="hero-story">
   <div class="hero-content">
     <p class="tag">GEMARIS ORIGINAL DOCUMENTARY</p>
@@ -63,9 +94,6 @@ HERO（映画のメインビジュアル・予告風）
   </div>
 </section>
 
-<!-- =========================
-INTRO（プロローグ・予告のセリフ風）
-========================= -->
 <section class="section intro-section">
   <div class="container">
     <div class="prologue-box">
@@ -78,12 +106,8 @@ INTRO（プロローグ・予告のセリフ風）
   </div>
 </section>
 
-<!-- =========================
-STORY CHAPTERS（各エピソード）
-========================= -->
 <div class="story-stream">
 
-  <!-- CHAPTER 01 -->
   <section class="story-episode">
     <div class="container">
       <div class="episode-card">
@@ -94,7 +118,7 @@ STORY CHAPTERS（各エピソード）
           <p>まだ「投げ銭」なんて文化すら存在しなかった時代から画面の向こう側を見てきたし、配信が純粋な趣味だった時代も、それが仕事になった時代も知っています。</p>
           <p>酸いも甘いも噛み分けてきたからこそ、今、僕にはひとつだけ絶対に譲れない考えがあります。</p>
           <p class="highlight">「エンタメで評価されたい」</p>
-          <p>それが、僕のすべての原点です。</p>
+          <p>それが, 僕のすべての原点です。</p>
           <p>配信の世界には、色んな勝ち方があります。<br>トークが抜群に上手い人、胸を打つ歌が歌える人、容姿の美しさで人気を集める人、あるいはリスナーとの巧みな距離感で応援される人。</p>
           <p>どれも素敵な才能ですが、僕が昔から一番価値を感じてきたのは、そこではありません。<br>視聴者から「最高に面白かった」「また絶対に見たい」「配信そのものが楽しかった」、そう言われる瞬間にこそ、僕の全存在意義があります。</p>
         </div>
@@ -102,7 +126,6 @@ STORY CHAPTERS（各エピソード）
     </div>
   </section>
 
-  <!-- CHAPTER 02 -->
   <section class="story-episode">
     <div class="container">
       <div class="episode-card">
@@ -117,7 +140,6 @@ STORY CHAPTERS（各エピソード）
     </div>
   </section>
 
-  <!-- CHAPTER 03 -->
   <section class="story-episode">
     <div class="container">
       <div class="episode-card">
@@ -133,7 +155,6 @@ STORY CHAPTERS（各エピソード）
     </div>
   </section>
 
-  <!-- CHAPTER 04 -->
   <section class="story-episode">
     <div class="container">
       <div class="episode-card">
@@ -143,7 +164,6 @@ STORY CHAPTERS（各エピソード）
           <p>正直に言います。もっと効率の良い、コスパのいい伸び方はいくらでもあります。<br> それでも僕は昔からエンタメが好きでした。<br>というより、たぶん僕にはエンタメしかできないんです。</p>
           <p>リスナーとの距離感の近さで応援されるより、ただ一言「面白かった」と言われる方が、脳汁が出るほど嬉しい。<br>だから結局、僕は今日も執念深く仕掛けを作り込んでしまいます。</p>
           
-          <!-- ギミック部分をエンドロール・シアター風のリストに変更 -->
           <ul class="gimmick-list">
             <li>天井に穴を開けてタライを設置するギミック</li>
             <li>月替わりで追加する、こだわりの音源加工素材</li>
@@ -153,13 +173,12 @@ STORY CHAPTERS（各エピソード）
             <li>緻密なスケジュール管理と、開始から終了までの完璧な構成・演出</li>
           </ul>
 
-          <p>側（がわ）から見れば、ものすごく遠回りに見えるかもしれません。<br>だけど、この工作を惜しまない時間、演出を考えている時間こそが、僕の配信スタイルそのものなんです。</p>
+          <p>側（がわ）から見れば、ものすごく遠回りに見えるかもしれません。<br>だけど、この工作を惜しまない時間、演出を考えている時間こそが、僕の配信スタイルそのものんです。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 05 -->
   <section class="story-episode">
     <div class="container">
       <div class="episode-card">
@@ -181,50 +200,67 @@ STORY CHAPTERS（各エピソード）
 
 </div>
 
-<!-- =========================
-CTA（エンディング・次回予告風）
-========================= -->
 <section class="section cta-section">
   <div class="container">
     <h2>あなたは、何で勝負しますか？</h2>
     <p class="section-lead">答えはまだ決まっていなくていい</p>
     <div class="cta-actions">
-      <a href="apply.html" class="button apply-button">オーディションに応募する</a>
+      <a href="apply.html?job=driver" class="button apply-button">オーディションに応募する</a>
     </div>
   </div>
 </section>
 
-<!-- =========================
-FOOTER
-========================= -->
 <footer class="footer">
   <div class="container">
+    <div class="footer-sub-links" style="text-align: center; margin-bottom: 15px;">
+      <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
+      <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
+    </div>
     <p>© 2026 Gemaris LLC</p>
   </div>
 </footer>
+
 <script>
     const hamburger = document.getElementById('js-hamburger');
     const navMenu = document.getElementById('js-nav-menu');
+    const header = document.querySelector('.header');
 
-    // ハンバーガーボタンのクリックイベント（ボタンの✕変形とメニュー展開を完全連動）
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('is-active');
-        navMenu.classList.toggle('is-active');
-    });
+    // --- ① ハンバーガーメニューの開閉（完全連動＆文字色視認性確保） ---
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            navMenu.classList.toggle('is-active');
+        });
 
-    // 戻るボタン対策の魔法（状態リセット）
-    window.addEventListener('pageshow', (event) => {
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('is-active');
+                hamburger.classList.remove('is-active');
+            });
+        });
+    }
+
+    window.addEventListener('pageshow', () => {
         if (navMenu) navMenu.classList.remove('is-active');
         if (hamburger) hamburger.classList.remove('is-active');
     });
 
-    // メニュー内のリンクをクリックした時に自動で閉じる
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('is-active');
-            hamburger.classList.remove('is-active');
-        });
+    // --- ② スマートヘッダー（スクロールで出没） ---
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        // スマホメニューが開いている時はヘッダーを隠さない
+        if (navMenu && navMenu.classList.contains('is-active')) return;
+
+        if (window.scrollY > lastScrollY && window.scrollY > 150) {
+            // ページダウンで隠す
+            header.classList.add('is-hide');
+        } else {
+            // ページアップで復活
+            header.classList.remove('is-hide');
+        }
+        lastScrollY = window.scrollY;
     });
 </script>
 </body>
