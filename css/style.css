@@ -818,3 +818,14 @@ li {
   height: 1px;
   background-color: #e0d5c1; /* Gemarisの世界観に合わせた上品なゴールド・ベージュ系の薄い線 */
 }
+/* 1. 見出し系だけは、不自然な1文字改行を防ぐためにキープ */
+h1, h2, h3, h4 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 2. 🚨戦犯：長文（p）や全体（body）は、絶対に突き抜けないように標準改行に戻す */
+body, p {
+  word-break: normal !important;      /* 横の突き抜けを緊急停止 */
+  overflow-wrap: break-word !important; /* 枠線に合わせて安全に自動改行 */
+}
