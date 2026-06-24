@@ -1,17 +1,19 @@
 /* =========================================
-   NETFLIX-INSPIRED CINEMATIC STYLE
+   NETFLIX-INSPIRED CINEMATIC STYLE (RESTORED FULL VERSION)
 ========================================= */
 
 :root {
-  --net-black: #08080a;        /* より深いシネマブラック */
-  --net-dark-gray: #14141d;   /* スクリーンの影を表現するダークグレー */
-  --net-red: #E50914;          /* Netflixネオンレッド */
+  --net-black: #08080a;
+  --net-dark-gray: #14141d;
+  --net-red: #E50914;
   --net-red-glow: rgba(229, 9, 20, 0.15);
-  --text-light: #f5f5f7;      /* 視認性の高いホワイト */
-  --text-muted: #a0a0ab;      /* 字幕風のミディアムグレー */
+  --text-light: #f5f5f7;
+  --text-muted: #a0a0ab;
 }
 
-/* 全体設定 */
+/* =========================
+   RESET
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -35,7 +37,7 @@ body {
 }
 
 /* =========================
-   HEADER & NAVIGATION
+   HEADER
 ========================= */
 .header {
   position: fixed;
@@ -43,8 +45,8 @@ body {
   left: 0;
   width: 100%;
   z-index: 9999;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  transition: background 0.3s;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+  transition: transform 0.3s ease;
 }
 
 .header-inner {
@@ -56,22 +58,22 @@ body {
 
 .logo {
   height: 36px;
-  display: block;
 }
 
+/* =========================
+   NAV (PC)
+========================= */
 .nav-menu {
   display: flex;
-  align-items: center;
   gap: 24px;
+  align-items: center;
 }
 
 .nav-menu a {
-  color: var(--text-light);
+  color: #fff;
   text-decoration: none;
-  font-size: 0.9rem;
   font-weight: 700;
-  opacity: 0.7;
-  transition: 0.3s;
+  opacity: 0.8;
 }
 
 .nav-menu a:hover {
@@ -79,21 +81,17 @@ body {
 }
 
 .nav-menu .apply-btn {
-  background-color: var(--net-red);
-  color: #fff;
+  background: var(--net-red);
   padding: 8px 16px;
   border-radius: 4px;
   opacity: 1;
-  box-shadow: 0 2px 10px rgba(229, 9, 20, 0.4);
 }
 
-.nav-menu .apply-btn:hover {
-  background-color: #ff1523;
-}
-
-/* PC時はハンバーガーボタンを非表示 */
+/* =========================
+   HAMBURGER
+========================= */
 .hamburger {
-  display: none !important;
+  display: none;
 }
 
 /* =========================
@@ -106,7 +104,8 @@ body {
   justify-content: center;
   text-align: center;
   position: relative;
-  background: 
+
+  background:
     radial-gradient(circle at center, rgba(229, 9, 20, 0.1) 0%, transparent 70%),
     linear-gradient(to bottom, rgba(8,8,10,0.4) 0%, var(--net-black) 95%);
 }
@@ -141,29 +140,6 @@ body {
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
-}
-
-.scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
-}
-.scroll .arrow {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--net-red), transparent);
-  margin: 10px auto 0;
-  animation: lineScroll 2s infinite;
-}
-
-@keyframes lineScroll {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
 /* =========================
@@ -252,13 +228,13 @@ body {
   color: #fff;
   margin: 35px 0;
   text-align: center;
-  position: relative;
 }
 
+/* gimmick */
 .gimmick-list {
   list-style: none;
   padding: 24px 30px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0,0,0,0.3);
   border-radius: 6px;
   margin: 30px 0;
   border: 1px dashed rgba(255,255,255,0.1);
@@ -279,10 +255,7 @@ body {
   margin-right: 12px;
 }
 
-.gimmick-list li:last-child {
-  margin-bottom: 0;
-}
-
+/* credo */
 .credo-box {
   margin: 35px 0;
   padding: 20px;
@@ -296,10 +269,6 @@ body {
   font-size: 1.15rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 10px;
-}
-.credo-box p:last-child {
-  margin-bottom: 0;
 }
 
 /* =========================
@@ -308,39 +277,31 @@ body {
 .cta-section {
   padding: 120px 0;
   text-align: center;
-  background: linear-gradient(to top, rgba(229, 9, 20, 0.1) 0%, var(--net-black) 100%);
+  background: linear-gradient(to top, rgba(229, 9, 20, 0.1), var(--net-black));
 }
 
 .cta-section h2 {
   font-family: 'Noto Serif JP', serif;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 900;
-  margin-bottom: 16px;
   color: #fff;
+  margin-bottom: 16px;
 }
 
 .section-lead {
   color: var(--text-muted);
-  font-size: 1.1rem;
   margin-bottom: 40px;
 }
 
 .apply-button {
   display: inline-block;
-  background-color: var(--net-red);
+  background: var(--net-red);
   color: #fff;
-  text-decoration: none;
   padding: 18px 48px;
-  font-size: 1.1rem;
-  font-weight: 700;
   border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
   box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5);
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.apply-button:hover {
-  background-color: #ff1523;
-  transform: scale(1.05);
 }
 
 /* =========================
@@ -348,68 +309,72 @@ body {
 ========================= */
 .footer {
   padding: 40px 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
   text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer p {
   color: var(--text-muted);
   font-size: 0.8rem;
-  margin: 0;
 }
 
-/* ==========================================================================
-   📱 RESPONSIVE (スマホ対応・他のCSSの競合を全てねじ伏せる設定)
-   ========================================================================== */
+/* =========================
+   MOBILE
+========================= */
 @media screen and (max-width: 768px) {
-  .episode-card {
-    padding: 35px 24px;
-  }
-  
-  .gimmick-list {
-    padding: 16px 20px;
-  }
 
-  /* ハンバーガーボタンを確実に表示 */
   .hamburger {
-    display: block !important;
+    display: block;
     width: 30px;
     height: 25px;
-    position: relative;
     background: none;
     border: none;
-    cursor: pointer;
+    position: relative;
     z-index: 10000;
   }
 
   .hamburger span {
-    display: block;
+    position: absolute;
     width: 100%;
     height: 2px;
-    background: #fff !important;
-    position: absolute;
-    transition: all 0.3s ease;
+    background: #fff;
   }
 
   .hamburger span:nth-child(1) { top: 0; }
   .hamburger span:nth-child(2) { top: 11px; }
   .hamburger span:nth-child(3) { bottom: 0; }
 
-  /* 三本線変形（X印） */
-  .hamburger.is-active span:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-  }
-
-  .hamburger.is-active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.is-active span:nth-child(3) {
-    transform: translateY(-12px) rotate(-45deg);
-  }
-
-  /* メニューの初期状態：他のCSSに邪魔されないよう!importantで隠す */
   .nav-menu {
-    display: none !important;
-    position: fixed !important;
-    top: 0 !important;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(8,8,10,0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 9998;
+  }
+
+  .nav-menu.is-active {
+    display: flex;
+  }
+
+  .nav-menu a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .nav-menu .apply-btn {
+    background: var(--net-red);
+    padding: 14px 24px;
+  }
+
+  .header.is-hide {
+    transform: translateY(-100%);
+  }
+}

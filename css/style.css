@@ -774,3 +774,47 @@ li {
   .cta-buttons { flex-direction: column; gap: 15px; padding: 0 20px; }
   .cta-section .apply-button { width: 100%; max-width: 300px; margin: 0 auto; }
 }
+/* ==========================================
+   🏁 フッターセクションのレスポンシブ改善CSS
+   ========================================== */
+
+/* 1. リンク全体のエリア設定 */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;       /* スマホで綺麗に折り返すように設定 */
+  justify-content: center;
+  gap: 8px 16px;         /* ★横の隙間は16px、縦の行間（gap）は8pxと超コンパクトに凝縮！ */
+  margin-top: 20px;
+  margin-bottom: 25px;   /* 仕切り線までの余白 */
+}
+
+/* 2. 各ハイパーリンク自体の調整 */
+.footer-links a {
+  display: inline-block;
+  line-height: 1.2;      /* ★行の高さ自体を限界まで詰めて、1つの塊に見せるで */
+  font-size: 0.85rem;    /* スマホで見やすい上品なサイズ感 */
+  text-decoration: none;
+  color: #666666;        /* 高級感のあるシックなグレー（お好みで変えてな） */
+}
+
+/* 3. コピーライトとの間に「仕切り線」を爆誕させる */
+.copyright {
+  position: relative;
+  margin-top: 25px;      /* ★リンクエリアとの境界をガッツリ広げる（25px） */
+  padding-top: 20px;     /* ★仕切り線から文字までの余白（20px） */
+  font-size: 0.75rem;
+  color: #888888;
+  text-align: center;
+}
+
+/* ★超簡単！CSSだけでコピーライトの上にオシャレな仕切り線を引く魔法の記述 */
+.copyright::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;           /* ★線の長さ（画面いっぱいじゃなく、中央にちょこんと置くのが今風でラグジュアリーや） */
+  height: 1px;
+  background-color: #e0d5c1; /* Gemarisの世界観に合わせた上品なゴールド・ベージュ系の薄い線 */
+}

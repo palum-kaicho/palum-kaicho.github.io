@@ -1,66 +1,16 @@
 /* ==========================================================================
-   Gemarisデザイン完全再現版：スタッフ紹介専用スタイル
+   Gemaris スタッフ紹介（修正版：バストアップ安定版）
    ========================================================================== */
 
-/* 背景をFAQ・プラン同様の生成りカラーに統一 */
+/* 背景 */
 body.gemaris-theme {
   background-color: #fdfaf5 !important;
-  color: #3a241c !important; 
+  color: #3a241c !important;
 }
 
-/* メイン画像エリア（スマホでも縮まないように最大化） */
-.staff-hero-section {
-  padding: 40px 20px 10px !important;
-  text-align: center !important;
-}
-
-.staff-char-container {
-  max-width: 560px !important;
-  width: 95% !important;
-  margin: 0 auto !important;
-}
-
-.staff-char-img {
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  border-radius: 8px !important;
-}
-
-map area {
-  cursor: pointer !important;
-}
-
-/* プロフィール詳細エリア */
-.profile-section-wrapper {
-  padding: 60px 20px !important;
-  background-color: #fdfaf5 !important;
-  scroll-behavior: smooth !important;
-}
-
-.section-title-custom {
-  text-align: center !important;
-  margin-bottom: 40px !important;
-}
-
-.section-title-custom span {
-  font-size: 13px !important;
-  color: #c9b195 !important;
-  letter-spacing: 0.2em !important;
-  display: block !important;
-  margin-bottom: 5px !important;
-  font-weight: bold !important;
-}
-
-.section-title-custom h2 {
-  font-family: 'Georgia', 'Noto Serif JP', serif !important;
-  font-size: 28px !important;
-  color: #6a1b1b !important;
-  margin: 0 !important;
-  font-weight: bold !important;
-}
-
-/* 👥 スタッフカード（高級感ある2重飾り枠デザイン） */
+/* =========================
+   プロフィールカード
+========================= */
 .staff-profile {
   display: flex !important;
   align-items: center !important;
@@ -78,15 +28,18 @@ map area {
 .staff-profile::before {
   content: '' !important;
   position: absolute !important;
-  top: 5px !important;
-  left: 5px !important;
-  right: 5px !important;
-  bottom: 5px !important;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
   border: 1px solid #f0e6da !important;
   border-radius: 9px !important;
   pointer-events: none !important;
 }
 
+/* =========================
+   アイコン（重要部分）
+========================= */
 .staff-img {
   flex-shrink: 0 !important;
   width: 120px !important;
@@ -94,19 +47,39 @@ map area {
   border-radius: 50% !important;
   overflow: hidden !important;
   border: 2px solid #c9b195 !important;
-  z-index: 1 !important;
+  position: relative;
 }
 
+/* ★ここが本体（修正ポイント） */
 .staff-img img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  transform: none !important; /* ←重要：ズーム廃止 */
 }
 
-.staff-info {
-  z-index: 1 !important;
+/* =========================
+   顔位置調整（ここでバストアップ調整）
+========================= */
+.img-kaicho {
+  object-position: center 20% !important;
 }
 
+.img-hina {
+  object-position: center 10% !important;
+}
+
+.img-makoto {
+  object-position: center 12% !important;
+}
+
+.img-risa {
+  object-position: center 35% !important;
+}
+
+/* =========================
+   テキスト
+========================= */
 .staff-info h3 {
   font-size: 20px !important;
   color: #3a241c !important;
@@ -125,10 +98,11 @@ map area {
   font-size: 14.5px !important;
   line-height: 1.6 !important;
   color: #555555 !important;
-  margin: 0 !important;
 }
 
-/* 🦊 イリス公式マスコットエリア */
+/* =========================
+   マスコット
+========================= */
 .character-message {
   display: flex !important;
   align-items: center !important;
@@ -141,54 +115,20 @@ map area {
 }
 
 .character-image {
-  flex-shrink: 0 !important;
-  width: 110px !important;
+  width: 110px;
+  flex-shrink: 0;
 }
 
 .character-image img {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: auto;
 }
 
-.character-tag {
-  font-size: 11px !important;
-  background: #6a1b1b !important;
-  color: #ffffff !important;
-  padding: 3px 10px !important;
-  border-radius: 4px !important;
-  font-weight: bold !important;
-}
-
-.character-content h2 {
-  font-size: 18px !important;
-  color: #3a241c !important;
-  margin: 8px 0 !important;
-  font-weight: bold !important;
-}
-
-.character-content p {
-  font-size: 14px !important;
-  line-height: 1.6 !important;
-  color: #555555 !important;
-  margin: 0 !important;
-}
-
-/* 📱 スマホ用レスポンシブ調整 */
+/* =========================
+   スマホ
+========================= */
 @media screen and (max-width: 768px) {
-  .staff-hero-section {
-    padding: 20px 10px 5px !important;
-  }
 
-  .staff-char-container {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  .profile-section-wrapper {
-    padding: 40px 15px !important;
-  }
-
-  /* スマホではプロフィールを縦並びにして見やすく */
   .staff-profile {
     flex-direction: column !important;
     text-align: center !important;
@@ -200,19 +140,13 @@ map area {
     height: 100px !important;
   }
 
-  .staff-info h3 {
-    font-size: 18px !important;
-  }
-
   .staff-desc {
     font-size: 13.5px !important;
     text-align: left !important;
   }
 
-  /* マスコットも縦並び */
   .character-message {
     flex-direction: column !important;
     text-align: center !important;
-    padding: 20px !important;
   }
 }
