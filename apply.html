@@ -336,12 +336,16 @@ class="apply-form">
   </div>
 </section>
 
-<footer class="footer">
+<!-- ==========================================
+       🏁 統一フッターセクション（html個別指定版）
+       ========================================== -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-logo">
         <img src="images/image(24).png" alt="Gemaris">
       </div>
       
+      <!-- メインナビ：セクションではなく、ページ（.html）単位でシンプルに繋ぐ -->
       <div class="footer-links">
         <a href="index.html">TOP</a>
         <a href="support.html">サポート</a>
@@ -351,6 +355,7 @@ class="apply-form">
         <a href="apply.html">応募</a>
       </div>
 
+      <!-- サブナビ：会社概要とプライバシーポリシー -->
       <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
         <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
         <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
@@ -359,6 +364,9 @@ class="apply-form">
       <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
   </footer>
+  <!-- ==========================================
+       🏁 統一フッターセクション（ここまで）
+       ========================================== -->
 <script>
     // --- ① ハンバーガーメニューの処理 ---
     const hamburger = document.getElementById('js-hamburger');

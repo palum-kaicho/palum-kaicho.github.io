@@ -2,360 +2,221 @@
 <html lang="ja">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>応募ありがとうございました｜Gemaris</title>
+<meta name="description" content="Gemaris応募完了ページ">
+<link rel="stylesheet" href="css/style.css">
 
-<title>
+<style>
+  .page-hero {
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+    background-color: #fcfbf9;
+  }
 
-応募ありがとうございました｜Gemaris
+  /* 中央揃えのスタイリッシュなラッパー */
+  .thanks-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-</title>
+  /* イリスちゃんの画像をスマホに最適なサイズ感に */
+  .thanks-iris {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+  }
 
-<meta name="description"
-content="Gemaris応募完了ページ">
+  .thanks-badge {
+    font-family: 'Georgia', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: #a9182a;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
 
-<link rel="stylesheet"
-href="css/style.css">
+  .thanks-content h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #1a1917;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+  }
 
+  .thanks-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5a5854;
+    margin: 0 0 25px 0;
+  }
+
+  /* 導線を邪魔しないシンプル応援メッセージ */
+  .thanks-cheer {
+    font-size: 1.1rem !important;
+    font-weight: 700;
+    color: #1a1917 !important;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  /* ボタンコンテナ */
+  .thanks-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 280px;
+    margin: 25px auto 0;
+  }
+
+  /* 押しやすいぷっくり立体ボタン化 */
+  .thanks-buttons .button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+
+  /* Discord登録（メインアクション：一番目立たせる） */
+  .thanks-buttons .btn-discord {
+    background-color: #5865F2;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(88, 101, 242, 0.3);
+  }
+  .thanks-buttons .btn-discord:hover {
+    background-color: #4752C4;
+  }
+
+  /* TOPページへ（サブアクション：落ち着いた黒） */
+  .thanks-buttons .btn-red {
+    background-color: #1a1917;
+    color: #ffffff !important;
+  }
+  .thanks-buttons .btn-red:hover {
+    background-color: #a9182a;
+  }
+
+  @media screen and (min-width: 576px) {
+    .thanks-wrapper {
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+  }
+</style>
 </head>
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
 <header class="header">
     <div class="container header-inner">
         <a href="index.html">
             <img src="images/image(24).png" alt="Gemaris" class="logo">
         </a>
-
-        <!-- ハンバーガーボタン -->
         <button class="hamburger" id="js-hamburger">
             <span></span><span></span><span></span>
         </button>
-
-        <!-- ナビゲーション本体 -->
         <nav class="nav-menu" id="js-nav-menu">
-            <a href="#about">Gemarisとは</a>
-            <a href="#support">サポート</a>
-            <a href="#plans">契約プラン</a>
-            <a href="#faq">FAQ</a>
-            <a href="company.html">企業概要</a>
-            <a href="recruit.html">ライバー募集</a>
-            <a href="staff.html">スタッフ紹介</a>
-            <a href="apply.html" class="apply-btn">応募する</a>
+            <a href="index.html">TOP</a>
+            <a href="index.html#plans">サポート・プラン</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="index.html#recruit-teaser">リクルート</a>
+            <a href="index.html#story-section">インタビュー</a>
+            <a href="index.html#staff-teaser">スタッフ</a>
+            <a href="apply.html" class="apply-btn">応募はこちら</a>
         </nav>
     </div>
 </header>
 
-<section class="page-hero section">
+<section class="page-hero">
+  <div class="container">
+    <div class="thanks-wrapper">
+      
+      <img src="images/iris-fight.png" alt="イリス" class="thanks-iris">
+      
+      <div class="thanks-content">
+        <span class="thanks-badge">THANK YOU</span>
+        <h1>応募を受け付けました！</h1>
+        <p>ご応募いただき誠を見にありがとうございます。<br>内容を確認の上、担当者より追ってご連絡いたします。</p>
+        
+        <p class="thanks-cheer">あなたの中の原石を、最高の輝きへ。</p>
+      </div>
 
-<div class="container">
+      <div class="thanks-buttons">
+        <a href="https://discord.gg/YOUR_LINK" class="button btn-discord">公式Discordに参加する</a>
+        <a href="index.html" class="button btn-red">TOPページへ戻る</a>
+      </div>
 
-<div class="thanks-wrapper">
-
-<div>
-
-<img
-src="images/iris-main.png"
-alt="イリス"
-class="thanks-iris">
-
-</div>
-
-<div class="thanks-content">
-
-<span class="thanks-badge">
-
-THANK YOU
-
-</span>
-
-<h1>
-
-応募ありがとう！
-
-</h1>
-
-<p>
-
-Gemarisへのご応募を
-受け付けました。
-
-</p>
-
-<p>
-
-内容を確認後、
-担当スタッフより
-ご連絡いたします。
-
-</p>
-
-<p>
-
-今しばらく
-お待ちください。
-
-</p>
-
-<div class="thanks-buttons">
-
-<a
-href="index.html"
-class="button btn-red">
-
-TOPへ戻る
-
-</a>
-
-<a
-href="https://discord.gg/xxxxx"
-target="_blank"
-class="button btn-discord">
-
-Discordへ
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-<section class="section">
+<!-- ==========================================
+       🏁 統一フッターセクション（html個別指定版）
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="images/image(24).png" alt="Gemaris">
+      </div>
+      
+      <!-- メインナビ：セクションではなく、ページ（.html）単位でシンプルに繋ぐ -->
+      <div class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="support.html">サポート</a>
+        <a href="plan.html">契約プラン</a>
+        <a href="recruit.html">募集要項</a>
+        <a href="staff.html">スタッフ紹介</a>
+        <a href="apply.html">応募</a>
+      </div>
+
+      <!-- サブナビ：会社概要とプライバシーポリシー -->
+      <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+        <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
+        <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
+      </div>
+
+      <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- ==========================================
+       🏁 統一フッターセクション（ここまで）
+       ========================================== -->
 
-<div class="container">
-
-<div class="next-step">
-
-<h2>
-
-今後の流れ
-
-</h2>
-
-<div class="step-grid">
-
-<div class="step-card">
-
-<div class="step-no">
-
-01
-
-</div>
-
-<h3>
-
-応募受付
-
-</h3>
-
-<p>
-
-応募内容を確認します。
-
-</p>
-
-</div>
-
-<div class="step-card">
-
-<div class="step-no">
-
-02
-
-</div>
-
-<h3>
-
-担当者連絡
-
-</h3>
-
-<p>
-
-メールまたはDiscordで
-ご連絡します。
-
-</p>
-
-</div>
-<div class="step-card">
-
-<div class="step-no">
-
-03
-
-</div>
-
-<h3>
-
-面談・相談
-
-</h3>
-
-<p>
-
-活動方針や目標について
-お話しします。
-
-</p>
-
-</div>
-
-<div class="step-card">
-
-<div class="step-no">
-
-04
-
-</div>
-
-<h3>
-
-活動スタート
-
-</h3>
-
-<p>
-
-いよいよライバー活動開始！
-Gemarisがサポートします。
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<div class="cta-box">
-
-<h2>
-
-あなたの中の原石を、
-最高の輝きへ。
-
-</h2>
-
-<p>
-
-Gemarisは、
-あなたの挑戦を応援しています。
-
-</p>
-
-<a
-href="index.html"
-class="button btn-red">
-
-TOPページへ
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<footer class="footer">
-
-<div class="container footer-inner">
-
-<div>
-
-<img
-src="images/logo.png"
-alt="Gemaris"
-class="logo">
-
-</div>
-
-<div class="footer-links">
-
-<a href="recruit.html">
-
-所属ライバー募集
-
-</a>
-
-<a href="staff.html">
-
-スタッフ紹介
-
-</a>
-
-<a href="company.html">
-
-企業概要
-
-</a>
-
-<a href="privacy.html">
-
-プライバシーポリシー
-
-</a>
-
-</div>
-
-</div>
-
-<div class="container">
-
-<div class="footer-bottom">
-
-© Gemaris LLC. All rights reserved.
-
-</div>
-
-</div>
-
-</footer>
 <script>
     const hamburger = document.getElementById('js-hamburger');
     const navMenu = document.getElementById('js-nav-menu');
 
-    // ハンバーガーボタンのクリックイベント
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('is-active');
-    });
-
-    // 💡 別のページから「戻る」で戻ってきたときに状態を完全リセットする魔法の処理
-    window.addEventListener('pageshow', (event) => {
-        // キャッシュから読み込まれた場合（戻るボタンなど）でも強制リセット
-        if (navMenu) {
-            navMenu.classList.remove('is-active');
-        }
-    });
-
-    // リンクをクリックしてメニューが閉じないバグもついでに予防（念のため）
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('is-active');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            navMenu.classList.toggle('is-active');
         });
-    });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('is-active');
+                hamburger.classList.remove('is-active');
+            });
+        });
+    }
 </script>
 </body>
-
 </html>
