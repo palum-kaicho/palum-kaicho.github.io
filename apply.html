@@ -81,28 +81,26 @@ href="css/style.css">
 <body>
 <header class="header">
     <div class="container header-inner">
-        <a href="index.html">
-            <img src="images/image(24).png" alt="Gemaris" class="logo">
-        </a>
-
-        <button class="hamburger" id="js-hamburger">
-            <span></span><span></span><span></span>
-        </button>
-
-        <nav class="nav-menu" id="js-nav-menu">
-            <a href="#about">Gemarisとは</a>
-            <a href="#support">サポート</a>
-            <a href="#plans">契約プラン</a>
-            <a href="#faq">FAQ</a>
-            <a href="company.html">企業概要</a>
-            <a href="recruit.html">ライバー募集</a>
-            <a href="staff.html">スタッフ紹介</a>
-            <a href="apply.html" class="apply-btn">応募する</a>
-        </nav>
+      <a href="index.html">
+        <img src="images/logo.png" alt="Gemaris Logo" class="logo">
+      </a>
+      <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu" id="js-nav-menu">
+        <a href="index.html">TOP</a>
+        <a href="index.html#plans">サポート・プラン</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#recruit-teaser">リクルート</a>
+        <a href="index.html#story-section">インタビュー</a>
+        <a href="index.html#staff-teaser">スタッフ</a>
+        <a href="apply.html" class="apply-btn">応募はこちら</a>
+      </nav>
     </div>
-</header>
-
-<section class="page-hero section" style="padding: 40px 0 20px 0; background-color: #faf7f2;">
+  </header>
+  <section class="page-hero section" style="padding: 40px 0 20px 0; background-color: #faf7f2;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
     <div class="apply-hero-image-box" style="width: 100%; max-width: 560px; margin: 0 auto;">
       <img src="images/apply.png" alt="Gemaris 応募フォーム：Gemarisに興味を持っていただきありがとうございます。下記フォームよりご応募ください。確認後、担当者よりご連絡いたします。" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.25);">
@@ -118,6 +116,7 @@ href="css/style.css">
 action="thanks.html"
 method="post"
 enctype="multipart/form-data"
+id="js-apply-form"
 class="apply-form">
 
   <div class="form-group">
@@ -132,7 +131,6 @@ class="apply-form">
     </select>
   </div>
 
-<!-- 希望プランプルダウン -->
   <div class="form-group">
     <label>
       希望プラン <span class="badge-required">必須</span>
@@ -142,7 +140,6 @@ class="apply-form">
       <option value="セルフプロ">セルフプロ</option>
       <option value="フルサポート">フルサポート</option>
       <option value="未定">未定</option>
-      <!-- 👑【新規追加】ライバー以外の応募者用選択肢 -->
       <option value="ライバー以外（マネージャー・スカウト等）">ライバー以外（マネージャー・スカウト等）</option>
     </select>
   </div>
@@ -156,9 +153,9 @@ class="apply-form">
 
   <div class="form-group">
     <label>
-      ふりがな <span class="badge-optional">任意</span>
+      ふりがな <span class="badge-required">必須</span>
     </label>
-    <input type="text" name="kana">
+    <input type="text" name="kana" required>
   </div>
 
   <div class="form-group">
@@ -177,9 +174,9 @@ class="apply-form">
 
   <div class="form-group">
     <label>
-      性別 <span class="badge-optional">任意</span>
+      性別 <span class="badge-required">必須</span>
     </label>
-    <select name="gender">
+    <select name="gender" required>
       <option value="">選択してください</option>
       <option value="女性">女性</option>
       <option value="男性">男性</option>
@@ -203,9 +200,9 @@ class="apply-form">
 
   <div class="form-group">
     <label>
-      使用予定アプリ <span class="badge-optional">任意</span>
+      使用予定アプリ <span class="badge-required">必須</span>
     </label>
-    <select name="platform">
+    <select name="platform" required>
       <option value="">選択してください</option>
       <option value="Palmu">Palmu</option>
       <option value="Pococha">Pococha</option>
@@ -215,7 +212,6 @@ class="apply-form">
     </select>
   </div>
 
-<!-- 👑【仕様変更】利用頻度の高いツール（複数選択対応チェックボックス） -->
   <div class="form-group">
     <label>
       利用頻度の高いツール（複数選択可） <span class="badge-required">必須</span>
@@ -225,22 +221,21 @@ class="apply-form">
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="main_sns_tool[]" value="Instagram"> Instagram</label>
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="main_sns_tool[]" value="Threads"> Threads</label>
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="main_sns_tool[]" value="TikTok"> TikTok</label>
-      <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="main_sns_tool[]" value="YouTube"> YouTube</label>
+      <label style="font-weight: normal; width: auto; margin: 0; pointer-events: auto; cursor: pointer;"><input type="checkbox" name="main_sns_tool[]" value="YouTube"> YouTube</label>
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="main_sns_tool[]" value="その他"> その他</label>
     </div>
   </div>
 
-  <!-- 👑【仕様変更】連絡可能なSNS（複数選択対応チェックボックス） -->
   <div class="form-group">
     <label>
-      連絡可能なSNS（複数選択可） <span class="badge-required">必須</span>
+      連絡可能なSNS・ツール（複数選択可） <span class="badge-required">必須</span>
     </label>
     <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 5px; width: 100%;">
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="contact_sns_type[]" value="LINE"> LINE</label>
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="contact_sns_type[]" value="Discord"> Discord</label>
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="contact_sns_type[]" value="X"> X</label>
       <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="contact_sns_type[]" value="Instagram"> Instagram</label>
-      <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="contact_sns_type[]" value="TikTok"> TikTok</label>
+      <label style="font-weight: normal; width: auto; margin: 0; cursor: pointer;"><input type="checkbox" name="contact_sns_type[]" value="メール"> メール</label>
     </div>
   </div>
 
@@ -256,12 +251,12 @@ class="apply-form">
     連絡先アカウント情報 <span class="badge-required">どちらか片方必須</span>
   </label>
   <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px; line-height: 1.4;">
-    上記でチェックを入れたSNSの「ID・リンクの入力」をするか、または「QRコード画像」を添付してください。
+    上記でチェックを入れたツールの「ID・リンク・メールアドレスの入力」をするか、または「QRコード画像」を添付してください。
   </p>
 
   <div style="width: 100%; margin-bottom: 15px;">
-    <span style="font-size: 0.85rem; font-weight: bold; color: #2b2b2b; display: block; margin-bottom: 6px;">方法A：IDや登録用リンクを入力する</span>
-    <textarea name="contact_sns_detail" id="js-sns-detail" rows="3" placeholder="例：XのIDは@xxxxx、LINEの登録URLは〜 など"></textarea>
+    <span style="font-size: 0.85rem; font-weight: bold; color: #2b2b2b; display: block; margin-bottom: 6px;">方法A：IDや登録用リンク、メールアドレスを入力する</span>
+    <textarea name="contact_sns_detail" id="js-sns-detail" rows="3" placeholder="例：XのIDは@xxxxx、メールアドレスはxxxx@xxxx.com など"></textarea>
   </div>
 
   <div style="width: 100%;">
@@ -279,13 +274,13 @@ class="apply-form">
   </div>
 </div>
 
-  <!-- 👑【仕様変更】応募理由を必須から「任意」へ変更 -->
   <div class="form-group">
     <label>
       応募理由 <span class="badge-optional">任意</span>
     </label>
     <textarea name="reason" rows="6" placeholder="Gemarisに応募した理由や、やってみたいことなどがあれば自由にご記入ください"></textarea>
   </div>
+
   <div class="form-group">
     <label>
       自由記入欄 <span class="badge-optional">任意</span>
@@ -319,13 +314,9 @@ class="apply-form">
 
 </section>
 
-<!-- =========================
-     💬 Discord相談セクション（apply03.png 差し替え版）
-     ========================= -->
 <section class="section" style="padding: 30px 0 50px 0; background-color: #faf7f2;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
     
-    <!-- 💡 画像全体をDiscordへの極上リンクボタンに変形 -->
     <a href="https://discord.gg/xxxxx" target="_blank" class="discord-banner-link" style="
       display: block;
       max-width: 560px;
@@ -336,10 +327,9 @@ class="apply-form">
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
     "
-    onmouseover="this.style.transform='scale(0.98)'; this.style.shadow='0 5px 15px rgba(215, 201, 182, 0.15)';"
-    onmouseout="this.style.transform='scale(1)'; this.style.shadow='0 10px 30px rgba(215, 201, 182, 0.25)';"
+    onmouseover="this.style.transform='scale(0.98)';"
+    onmouseout="this.style.transform='scale(1)';"
     >
-      <!-- 添付イラスト「apply03.png」を表示 -->
       <img src="images/apply03.png" alt="応募前の相談も歓迎です。応募するか迷っている方も、まずはお気軽にご相談ください。Discordで相談する" style="width: 100%; height: auto; display: block; border: none;">
     </a>
 
@@ -347,31 +337,45 @@ class="apply-form">
 </section>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div>
-      <img src="images/logo.png" alt="Gemaris" class="logo">
-    </div>
-    <div class="footer-links">
-      <a href="recruit.html">所属ライバー募集</a>
-      <a href="company.html">企業概要</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="contact.html">お問い合わせ</a>
-    </div>
-  </div>
-  <div class="container">
-    <div class="footer-bottom">
-      © Gemaris LLC. All rights reserved.
-    </div>
-  </div>
-</footer>
+    <div class="container">
+      <div class="footer-logo">
+        <img src="images/image(24).png" alt="Gemaris">
+      </div>
+      
+      <div class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="support.html">サポート</a>
+        <a href="plan.html">契約プラン</a>
+        <a href="recruit.html">募集要項</a>
+        <a href="staff.html">スタッフ紹介</a>
+        <a href="apply.html">応募</a>
+      </div>
 
+      <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+        <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
+        <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
+      </div>
+
+      <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
 <script>
+    // --- ① ハンバーガーメニューの処理 ---
     const hamburger = document.getElementById('js-hamburger');
     const navMenu = document.getElementById('js-nav-menu');
 
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('is-active');
-    });
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('is-active');
+        });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('is-active');
+            });
+        });
+    }
 
     window.addEventListener('pageshow', (event) => {
         if (navMenu) {
@@ -379,33 +383,54 @@ class="apply-form">
         }
     });
 
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('is-active');
-        });
-    });
-    // 🌟 SNS連絡先の「片方必須」チェック処理
+    // --- ② SNS連絡先の「片方必須」チェック処理 ---
     const applyForm = document.getElementById('js-apply-form');
     const snsDetail = document.getElementById('js-sns-detail');
     const snsQr = document.getElementById('js-sns-qr');
 
-    if (applyForm) {
+    if (applyForm && snsDetail && snsQr) {
         applyForm.addEventListener('submit', (event) => {
-            // テキスト入力のトリム（空白除去）とファイルの選択状態をチェック
             const hasText = snsDetail.value.trim() !== '';
             const hasFile = snsQr.files.length > 0;
 
-            // 両方とも空っぽだったら送信をブロックするで！
             if (!hasText && !hasFile) {
-                event.preventDefault(); // 送信を中止
+                event.preventDefault(); 
                 alert('【連絡先アカウント情報】のご入力をお願いします。\n「方法A：IDやリンクの入力」または「方法B：QRコード画像の添付」のどちらか片方は必須となります！');
-                
-                // ユーザーが気づきやすいように枠に一瞬フォーカスを当てる
                 snsDetail.focus();
             }
         });
     }
+    
+    // --- ③ URLパラメータによる希望職種＆希望プランの自動選択処理 ---
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobParam = urlParams.get('job');
+
+        const jobSelect = document.querySelector('select[name="job_type"]');
+        const planSelect = document.querySelector('select[name="plan_type"]'); // 💡 希望プランのセレクトボックスも取得！
+
+        if (jobParam && jobSelect) {
+            let targetJobValue = '';
+            
+            if (jobParam === 'driver') {
+                targetJobValue = 'ライバー';
+            } else if (jobParam === 'manager') {
+                targetJobValue = 'マネージャー';
+            } else if (jobParam === 'scout') {
+                targetJobValue = 'スカウト';
+            }
+
+            // 職種を自動選択
+            if (targetJobValue) {
+                jobSelect.value = targetJobValue;
+            }
+
+            // 💡 【追加】マネージャーかスカウトの場合は、プランを「ライバー以外」に自動選択！
+            if (planSelect && (jobParam === 'manager' || jobParam === 'scout')) {
+                planSelect.value = 'ライバー以外（マネージャー・スカウト等）';
+            }
+        }
+    });
 </script>
 </body>
 

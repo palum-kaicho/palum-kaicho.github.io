@@ -34,27 +34,33 @@
 </head>
 <body class="gemaris-theme">
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="index.html">
-      <img src="images/image(24).png" alt="Gemaris" class="logo">
-    </a>
-
-    <button class="hamburger" id="js-hamburger">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav-menu" id="js-nav-menu">
-      <a href="index.html#about">Gemarisとは</a>
-      <a href="support.html">サポート</a>
-      <a href="plan.html">契約プラン</a>
-      <a href="faq.html">FAQ</a>
-      <a href="recruit.html" class="active">ライバー募集</a>
-      <a href="staff.html">スタッフ紹介</a>
-      <a href="apply.html" class="apply-btn">応募する</a>
-    </nav>
-  </div>
-</header>
+<!-- ==========================================
+       👑 統一ヘッダーセクション（ここから）
+       ========================================== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Gemaris Logo" class="logo">
+      </a>
+      <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu" id="js-nav-menu">
+        <a href="index.html">TOP</a>
+        <a href="index.html#plans">サポート・プラン</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#recruit-teaser">リクルート</a>
+        <a href="index.html#story-section">インタビュー</a>
+        <a href="index.html#staff-teaser">スタッフ</a>
+        <a href="apply.html" class="apply-btn">応募はこちら</a>
+      </nav>
+    </div>
+  </header>
+  <!-- ==========================================
+       👑 統一ヘッダーセクション（ここまで）
+       ========================================== -->
 
 <div class="recruit-page-wrapper">
   <div class="container-recruit">
@@ -108,25 +114,37 @@
   </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-logo">
-      <img src="images/image(24).png" alt="Gemaris">
+<!-- ==========================================
+       🏁 統一フッターセクション（html個別指定版）
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="images/image(24).png" alt="Gemaris">
+      </div>
+      
+      <!-- メインナビ：セクションではなく、ページ（.html）単位でシンプルに繋ぐ -->
+      <div class="footer-links">
+        <a href="index.html">TOP</a>
+        <a href="support.html">サポート</a>
+        <a href="plan.html">契約プラン</a>
+        <a href="recruit.html">募集要項</a>
+        <a href="staff.html">スタッフ紹介</a>
+        <a href="apply.html">応募</a>
+      </div>
+
+      <!-- サブナビ：会社概要とプライバシーポリシー -->
+      <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+        <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
+        <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
+      </div>
+
+      <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
-    <div class="footer-links">
-      <a href="index.html#about">Gemarisとは</a>
-      <a href="support.html">サポート</a>
-      <a href="plan.html">契約プラン</a>
-      <a href="faq.html">FAQ</a>
-      <a href="staff.html">スタッフ</a>
-      <a href="recruit.html">募集要項</a>
-      <a href="apply.html">応募</a>
-    </div>
-    <p>Gemaris合同会社</p>
-    <p>〒790-0942 愛媛県松山市古川北3-9-8</p>
-    <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
-  </div>
-</footer>
+  </footer>
+  <!-- ==========================================
+       🏁 統一フッターセクション（ここまで）
+       ========================================== -->
 
 <script>
 // 🌟 recruit03.png 用：イメージマップの座標を画面サイズに合わせて自動リサイズする処理
