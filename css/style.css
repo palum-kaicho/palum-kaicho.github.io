@@ -679,13 +679,19 @@ li {
    DISCORD & FOOTER
    ========================================================================== */
 .discord-section { text-align: center; }
-.footer { padding: 6px 0; background: var(--gem-paper-light); border-top: 1px solid var(--gem-border); text-align: center; }
+
+/* 🚨 padding の最初の数値を 6px から 60px に大幅アップ！ */
+.footer { 
+  padding: 60px 0 20px 0 !important; 
+  background: var(--gem-paper-light); 
+  border-top: 1px solid var(--gem-border); 
+  text-align: center; 
+}
+
 .footer-logo img { height: 40px; margin: 0 auto 20px; }
 .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
 .footer-links a { color: var(--gem-black); font-size: 0.9rem; }
-.copyright { margin-top: 20px; font-size: 0.8rem; color: var(--gem-gray); }
-
-/* ==========================================================================
+.copyright { margin-top: 20px; font-size: 0.8rem; color: var(--gem-gray); }/* ==========================================================================
    📱 RESPONSIVE (スマホ対応・メディアクエリ)
    ========================================================================== */
 @media screen and (max-width: 768px) {
