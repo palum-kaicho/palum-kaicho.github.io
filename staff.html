@@ -7,60 +7,10 @@
   <meta name="description" content="Gemaris（ジェマリス）を支えるスタッフ・マスコットの紹介。それぞれの専門分野を持ったスタッフが、ライバーが安心して活動できるよう全力でサポートしています。">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/staff.css">
-
-  <style>
-    /* リング枠（.staff-img）の基本定義を上書き・固定 */
-    .staff-img {
-      width: 120px !important;   /* リングのサイズ（CSSに合わせて変えてな） */
-      height: 120px !important;
-      border-radius: 50% !important;
-      overflow: hidden !important;
-      position: relative !important;
-    }
-
-    /* 中の画像をリングいっぱいに広げてバストアップ化 */
-    .staff-img img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important; /* ★枠内に隙間なく画像を敷き詰める */
-      transform: scale(1.4);        /* ★一律で1.4倍に拡大してバストアップに強制変形！ */
-    }
-
-    /* 各メンバーのイラストの「顔の位置」に合わせてカメラを上下に微調整（ミリ単位設定） */
-    .staff-img img.img-kaicho {
-      object-position: center 20%;  /* かいちょ：少し上気味（顔中心）にセット */
-    }
-    .staff-img img.img-hina {
-      object-position: center 15%;  /* ひな：顔位置に合わせて調整 */
-    }
-    .staff-img img.img-makoto {
-      object-position: center 15%;  /* まこと：顔位置に合わせて調整 */
-    }
-    .staff-img img.img-risa {
-      object-position: center 15%;  /* りさ：顔位置に合わせて調整 */
-    }
-
-    /* マスコット枠も必要に応じて丸型＆拡大（不要なら削除してな） */
-    .character-image {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-    .character-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
-  </style>
 </head>
 <body class="gemaris-theme">
 
-<!-- ==========================================
-       👑 統一ヘッダーセクション（ここから）
-       ========================================== -->
-  <header class="header">
+<header class="header">
     <div class="container header-inner">
       <a href="index.html">
         <img src="images/logo.png" alt="Gemaris Logo" class="logo">
@@ -81,113 +31,18 @@
       </nav>
     </div>
   </header>
-  <!-- ==========================================
-       👑 統一ヘッダーセクション（ここまで）
-       ========================================== -->
-
-
-<div id="profile-area" class="profile-section-wrapper" style="padding-top: 40px;">
+  <div id="profile-area" class="profile-section-wrapper" style="padding-top: 40px;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
 
-    <div class="apply-banner-wrap" style="
-      position: relative;
-      width: 100%;
-      max-width: 560px;
-      margin: 0 auto 30px auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(215, 201, 182, 0.15);
-    ">
-      <img src="images/staff05.png" alt="TEAM GEMARIS サポートスタッフ" style="width: 100%; height: auto; display: block; border: none;">
-    </div>
-
-    <div class="staff-profile">
-      <div class="staff-img">
-        <img src="images/kaichosuit.png" alt="かいちょ" class="img-kaicho">
-      </div>
-      <div class="staff-info">
-        <h3>かいちょ（神楽 魁斗）</h3>
-        <p class="staff-role">代表社員 / CEO</p>
-        <p class="staff-desc">
-          Gemaris代表。ライバー育成方針の策定、事務所運営、活動相談、資料のHTML加工を担当。挑戦する人の背中を押せる事務所づくりを目指しています。
-        </p>
-      </div>
-    </div>
-
-    <div class="staff-profile">
-      <div class="staff-img">
-        <img src="images/hinasuit.png" alt="ひな" class="img-hina">
-      </div>
-      <div class="staff-info">
-        <h3>小鳥遊 ひな</h3>
-        <p class="staff-role">秘書</p>
-        <p class="staff-desc">
-          各資料の校閲、素材制作、応募者対応、お問い合わせ対応、各種案内を担当しています。初めての方でも安心できるよう丁寧なサポートを行っています。
-        </p>
-      </div>
-    </div>
-
-    <div class="staff-profile">
-      <div class="staff-img">
-        <img src="images/makotosuit.png" alt="まこと" class="img-makoto">
-      </div>
-      <div class="staff-info">
-        <h3>春嵐 まこと</h3>
-        <p class="staff-role">総務</p>
-        <p class="staff-desc">
-          公的文書作成、経費、機材管理を担当しています。裏方として環境づくりを支えています。
-        </p>
-      </div>
-    </div>
-
-    <div class="staff-profile">
-      <div class="staff-img">
-        <img src="images/risa.png" alt="りさ" class="img-risa">
-      </div>
-      <div class="staff-info">
-        <h3>さいとう りさ</h3>
-        <p class="staff-role">所属タレント兼マネージャー</p>
-        <p class="staff-desc">
-          現役活動者として新人ライバーのサポートを担当しています。活動相談やモチベーション管理もリアルな目線で対応可能です。
-        </p>
-      </div>
-    </div>
-
-    <div class="character-message">
-      <div class="character-image">
-        <img src="images/iris-mascot.png" alt="イリス">
-      </div>
-      <div class="character-content">
-        <span class="character-tag">MASCOT</span>
-        <h2>Gemaris公式マスコット イリス</h2>
-        <p>
-          Gemarisの理念「原石」と「架け橋」を象徴する公式マスコットです。小さな翼と赤い宝石を持つ黒と金色のわんこ。
-        </p>
-      </div>
-    </div>
-<section class="legend-section" style="margin-top: 60px; padding-top: 40px; border-top: 2px dashed rgba(26, 25, 23, 0.1); width: 100%;">
-    
-    <div style="text-align: center; margin-bottom: 35px; width: 100%; padding: 0 15px; box-sizing: border-box;">
-      <p style="color: #a9182a; font-weight: 700; letter-spacing: 0.15em; font-size: 0.85rem; margin-bottom: 8px;">THE EMBLEM OF GEMARIS</p>
-      <h2 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 900; color: #1a1917; margin: 0; width: 100%; line-height: 1.4;">
-        理念を体現する、二つの原石。
-      </h2>
-      <p style="font-size: 0.95rem; color: #5a5854; margin-top: 12px; line-height: 1.6; width: 100%;">
-        「原石を最高の輝きへ導く」というGemarisの社名、そしてロゴマークに込めた想い。<br>
-        ここに、その理想を自らの努力と才能で証明し、道を切り拓いた二人のトップライバーがいます。
-      </p>
-    </div>
-
-    <div class="legend-wide-container" style="
-      width: 100vw;               /* 🚨 画面の横幅ぴったり100%に指定 */
+    <div class="legend-wide-banner-wrap" style="
+      width: 100vw;               /* 🚨 画面の横幅ぴったり100%に広げる */
       position: relative;
       left: 50%;
-      transform: translateX(-50%); /* 🚨 外側のcontainer枠のパディングを強制リセットして中央に引っ張り出す */
-      margin: 0;
-      padding: 0;
+      transform: translateX(-50%); /* 🚨 外側のcontainer枠の余白を強制リセットして端まで敷き詰める */
+      margin: 0 0 40px 0;         /* 下のスタッフ一覧との間に綺麗な余白を確保 */
       overflow: hidden;
     ">
-      <img src="images/TOP2.png" alt="Gemarisの思想を体現するトップライバー かいちょ & りさ" style="
+      <img src="images/TOP2.png" alt="Gemaris TOPライバー かいちょ & りさ" style="
         width: 100%;
         height: auto;
         display: block;
@@ -196,61 +51,30 @@
       ">
     </div>
 
-    <div style="max-width: 100%; padding: 0 15px; box-sizing: border-box; text-align: center; margin-top: 25px;">
-      <p style="font-size: 0.9rem; color: #666; line-height: 1.5; margin-bottom: 20px;">
-        果てなき熱量でエンタメの頂点を目指す者と、唯一無二の表現力で枠を魅了する者。<br>
-        それぞれの軌跡と、内に秘めた熱い思想を特別インタビューにて公開中。
-      </p>
-
-      <div class="legend-buttons" style="
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-      ">
-        <a href="story-kaicho.html" style="
-          display: block;
-          width: 100%;
-          padding: 14px 0;
-          background-color: #1a1917;
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: 700;
-          font-size: 0.95rem;
-          text-align: center;
-          border-radius: 4px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          transition: all 0.3s ease;
-        " onmouseover="this.style.backgroundColor='#a9182a'" onmouseout="this.style.backgroundColor='#1a1917'">
-          ストーリーを読む
-        </a>
-        
-        <a href="story-risa.html" style="
-          display: block;
-          width: 100%;
-          padding: 14px 0;
-          background-color: #ffffff;
-          color: #a9182a;
-          text-decoration: none;
-          font-weight: 700;
-          font-size: 0.95rem;
-          text-align: center;
-          border: 2px solid #a9182a;
-          border-radius: 4px;
-          box-shadow: 0 4px 12px rgba(169,24,42,0.05);
-          transition: all 0.3s ease;
-        " onmouseover="this.style.backgroundColor='#a9182a'; this.style.color='#ffffff'" onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#a9182a'">
-          インタビューを読む
-        </a>
-      </div>
+    <div class="staff-card-wrap" style="width: 100%; margin-bottom: 30px;">
+      <img src="images/staff-kaicho.png" alt="代表社員 / CEO かいちょ（神楽 魁斗）" style="width: 100%; height: auto; display: block; border-radius: 8px;">
     </div>
-  </section>
+
+    <div class="staff-card-wrap" style="width: 100%; margin-bottom: 30px;">
+      <img src="images/staff-hina.png" alt="秘書 小鳥遊 ひな" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </div>
+
+    <div class="staff-card-wrap" style="width: 100%; margin-bottom: 30px;">
+      <img src="images/staff-makoto.png" alt="総務 春嵐 まこと" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </div>
+
+    <div class="staff-card-wrap" style="width: 100%; margin-bottom: 30px;">
+      <img src="images/staff-risa.png" alt="所属タレント兼マネージャー さいとう りさ" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </div>
+
+    <div class="staff-card-wrap" style="width: 100%; margin-bottom: 30px;">
+      <img src="images/staff-iris.png" alt="Gemaris公式マスコット イリスくん" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </div>
+
   </div>
 </div>
 
-<section class="section staff-combined-cta-section" id="staff-cta" style="padding: 40px 0; background: transparent;">
+  <section class="section staff-combined-cta-section" id="staff-cta" style="padding: 40px 0; background: transparent;">
     <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
       
       <div class="apply-banner-wrap" style="
@@ -294,16 +118,12 @@
     </div>
   </section>
 
-<!-- ==========================================
-       🏁 統一フッターセクション（html個別指定版）
-       ========================================== -->
-  <footer class="footer">
+<footer class="footer">
     <div class="container">
       <div class="footer-logo">
         <img src="images/image(24).png" alt="Gemaris">
       </div>
       
-      <!-- メインナビ：セクションではなく、ページ（.html）単位でシンプルに繋ぐ -->
       <div class="footer-links">
         <a href="index.html">TOP</a>
         <a href="support.html">サポート</a>
@@ -313,7 +133,6 @@
         <a href="apply.html">応募</a>
       </div>
 
-      <!-- サブナビ：会社概要とプライバシーポリシー -->
       <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
         <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
         <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
@@ -322,10 +141,6 @@
       <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
   </footer>
-  <!-- ==========================================
-       🏁 統一フッターセクション（ここまで）
-       ========================================== -->
-
 <script>
   const hamburger = document.getElementById('js-hamburger');
   const navMenu = document.getElementById('js-nav-menu');

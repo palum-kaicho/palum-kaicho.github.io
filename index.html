@@ -133,18 +133,28 @@
   </section>
 
 <!-- ==========================================
-       👑 所属ライバーの思想セクション（ストーリー）
+       👑 所属ライバーの思想セクション（ストーリー）★横幅パンパン版
        ========================================== -->
-  <section class="section story-section" style="padding: 60px 0; background-color: #faf7f2; position: relative;">
+  <section class="section story-section" style="padding: 60px 0; background-color: #faf7f2; position: relative; overflow: hidden;">
     
     <!-- 💡 固定ヘッダーの裏に隠れるのを防ぐ、位置調整用の見えない透明のピン留め -->
     <div id="story-section" style="position: absolute; top: -80px; left: 0;"></div>
 
-    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
+    <!-- 🚨 外側のcontainer枠を100vw＆トランスフォームでぶち抜いて画面いっぱいに広げる -->
+    <div class="container story-wide-container" style="
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+    ">
       
-      <div class="story-image-wrapper-main" style="position: relative; width: 100%; max-width: 560px; margin: 0 auto 30px auto;">
-        <img src="images/index-story.png" alt="所属ライバーの思想" style="width: 100%; height: auto; display: block; border-radius: 12px 12px 0 0;">
+      <!-- 📰 メインインタビュー（かいちょ＆りさ） -->
+      <div class="story-image-wrapper-main" style="position: relative; width: 100%; margin: 0 auto;">
+        <img src="images/index-story.png" alt="所属ライバーの思想" style="width: 100%; height: auto; display: block;">
         
+        <!-- かいちょストーリーボタン -->
         <a href="story-kaicho.html" class="story-invisible-link link-kaicho" style="
           position: absolute;
           display: block;
@@ -157,6 +167,7 @@
           cursor: pointer;
         " aria-label="エンタメだけで頂点を狙う男の哲学 STORYを読む"></a>
         
+        <!-- りさストーリーボタン -->
         <a href="story-risa.html" class="story-invisible-link link-risa" style="
           position: absolute;
           display: block;
@@ -170,15 +181,15 @@
         " aria-label="スマホ1つで世界を変える思考法 STORYを読む"></a>
       </div>
 
-      <div class="story-image-wrapper-cta" style="position: relative; width: 100%; max-width: 560px; margin: 0 auto;">
+      <!-- 📢 下部CTA（あなたの番です） -->
+      <div class="story-image-wrapper-cta" style="position: relative; width: 100%; margin: 0 auto;">
         <a href="apply.html" style="display: block; text-decoration: none; cursor: pointer;" aria-label="あなたの番です 未来を変える">
-          <img src="images/index-stor2y.png" alt="あなたの番です。次にストーリーを書くのはあなたかもしれない。" style="width: 100%; height: auto; display: block; border-radius: 0 0 12px 12px; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.3); transition: transform 0.2s ease;">
+          <img src="images/index-stor2y.png" alt="あなたの番です。次にストーリーを書くのはあなたかもしれない。" style="width: 100%; height: auto; display: block; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.3); transition: transform 0.2s ease;">
         </a>
       </div>
 
     </div>
   </section>
-
   <!-- ==========================================
        🐾 スタッフ紹介告知セクション
        ========================================== -->
