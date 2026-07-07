@@ -107,7 +107,7 @@ body.page-interview {
   margin-bottom: 80px;
 }
 
-.magazine-tag {
+.interview-tag {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   font-style: italic;
@@ -127,12 +127,18 @@ body.page-interview {
   margin: 0 auto 30px;
 }
 
-.hero-meta {
+.hero-lead {
+  font-size: 1.05rem;
+  color: var(--mag-gray);
+  margin-bottom: 30px;
+}
+
+.credit {
   font-size: 0.9rem;
   color: var(--mag-gray);
 }
 
-.hero-meta .name {
+.credit .speaker {
   font-weight: 700;
   color: var(--mag-black);
   margin-right: 15px;
@@ -141,44 +147,53 @@ body.page-interview {
 /* =========================
   MAIN CONTENT
 ========================= */
-/* 💡 本文が横に広がりすぎず綺麗に中央に収まるように調整 */
 .interview-container {
   max-width: 800px;
   margin: 0 auto;
   padding-bottom: 100px;
 }
 
-.interview-layout {
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: 100px;
-}
-
-.interview-block {
-  margin-bottom: 60px;
-}
-
-.interview-block:last-child {
-  margin-bottom: 0;
-}
-
+/* 🛠️ 【大改良】質問タイトルの3段縦並び＆左ラインアクセント */
 .question h2 {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
   font-weight: 700;
   color: var(--mag-black);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   line-height: 1.5;
+  
+  /* Q、メイン、サブタイトルを縦並びに綺麗に積む */
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 6px; /* 縦の要素同士の間隔 */
+  
+  /* 雑誌風の左側のアクセント線（ボルドー色） */
+  border-left: 3px solid var(--mag-accent);
+  padding-left: 14px;
 }
 
+/* 🛠️ ナンバリング（Q.XX）部分の装飾 */
 .question h2 span {
   font-family: 'Cormorant Garamond', serif;
   color: var(--mag-accent);
-  font-size: 1.6rem;
-  margin-right: 15px;
+  font-size: 1.7rem;
+  font-weight: 600;
   line-height: 1;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+/* 🛠️ 【新設】「：」の代わりに導入したサブタイトル用の洗練されたデザイン */
+.question h2 small {
+  display: block; /* 確実に独立行にする */
+  font-size: clamp(0.85rem, 2vw, 0.95rem); /* スマホ〜PCで読みやすくサイズ追従 */
+  color: var(--mag-gray); /* 本文より若干淡いグレーにして主従関係を明快に */
+  font-weight: 500;
+  font-family: 'Noto Sans JP', sans-serif; /* サブタイトルをモダンゴシックにして文字に緩急をプラス */
+  margin-top: 4px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .answer p {
@@ -249,7 +264,7 @@ body.page-interview {
 }
 
 /* ==========================================================================
-   📱 RESPONSIVE (スマホ対応・ハミ出しとギシギシを完全攻略)
+   📱 RESPONSIVE (スマホ対応・ハミ出し完全ブロック)
    ========================================================================== */
 @media screen and (max-width: 768px) {
   .header {
@@ -345,5 +360,12 @@ body.page-interview {
     background-color: var(--mag-accent) !important;
     color: #fff !important;
     border-radius: 30px !important;
+  }
+
+  /* スマホの時の見出しフォントとレイアウト微調整 */
+  .question h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
   }
 }
