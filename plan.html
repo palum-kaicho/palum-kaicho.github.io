@@ -5,17 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>契約プラン｜Gemaris</title>
   <meta name="description" content="Gemaris（ジェマリス）のライバー契約プラン。報酬還元率100%のセルフプロ契約と、機材貸与や経費補助が充実したフルサポート契約の2種類から選べます。">
-  <!-- 共通スタイル -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- 契約プランページ専用スタイル -->
   <link rel="stylesheet" href="css/plan.css">
 </head>
 <body class="gemaris-theme">
 
-<!-- ==========================================
-       👑 統一ヘッダーセクション（ここから）
-       ========================================== -->
-  <header class="header">
+<header class="header">
     <div class="container header-inner">
       <a href="index.html">
         <img src="images/logo.png" alt="Gemaris Logo" class="logo">
@@ -36,21 +31,35 @@
       </nav>
     </div>
   </header>
-  <!-- ==========================================
-       👑 統一ヘッダーセクション（ここまで）
-       ========================================== -->
-
-<!-- プラン専用ビジュアルメイン（ここですべて完結や！） -->
-<section class="plan-hero-section">
+  <section class="plan-hero-section">
   <div class="plan-hero-inner">
     <div class="plan-char-container">
-      <!-- すべてのプラン内容が含まれた最強の画像を配置 -->
       <img src="images/plan.png" alt="Gemaris 契約プラン（セルフプロ契約 還元率100% / フルサポート契約 還元率75〜95%）" class="plan-char-img">
     </div>
   </div>
 </section>
 
-<!-- 注記セクション（画像の下に綺麗に配置） -->
+<!-- プラン専用ビジュアルメイン -->
+<section class="plan-hero-section">
+  <div class="plan-hero-inner">
+    <div class="plan-char-container">
+      <img src="images/plan.png" alt="Gemaris 契約プラン（セルフプロ契約 還元率100% / フルサポート契約 還元率75〜95%）" class="plan-char-img">
+    </div>
+  </div>
+</section>
+
+<!-- 📊 報酬シミュレーション導線セクション（plan.css連動版） -->
+<section class="simulation-lead-section">
+  <div class="simulation-lead-container">
+    <p class="simulation-lead-text">「 実際にどれくらい稼げる？ 」<br> 気になったらココからチェック</p>
+    <a href="simulation.html" class="simulation-gold-btn">
+       報酬シミュレーションを試す
+    </a>
+  </div>
+</section>
+
+<!-- 注記セクション -->
+
 <section class="plan-note-section">
   <div class="container">
     <p class="comparison-note">
@@ -59,19 +68,13 @@
   </div>
 </section>
 
-<!-- =========================
-     👑 新・CTAセクション（画像差し替え＆完全レスポンシブ版）
-     ========================= -->
 <section class="cta-section section" style="padding: 60px 0; background-color: #faf7f2;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
     
-    <!-- 💡 画像と透明リンクを内包する基準コンテナ -->
     <div class="cta-image-wrapper" style="position: relative; width: 100%; max-width: 560px; margin: 0 auto;">
       
-      <!-- 添付イラスト「index-plan.png」を表示 -->
       <img src="images/index-plan.png" alt="あなたに合ったプランでスタート！" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.3);">
       
-      <!-- 👑 ライバー応募ボタン用の透明なリンクエリア -->
       <a href="apply.html" class="cta-invisible-link link-apply" style="
         position: absolute;
         display: block;
@@ -84,7 +87,6 @@
         cursor: pointer;
       " aria-label="プランを選んでライバー応募"></a>
       
-      <!-- 👑 Discord相談ボタン用の透明なリンクエリア -->
       <a href="https://discord.gg/XXXXXXXX" target="_blank" class="cta-invisible-link link-discord" style="
         position: absolute;
         display: block;
@@ -98,19 +100,15 @@
       " aria-label="Discordで相談する"></a>
       
     </div>
-
   </div>
 </section>
-<!-- ==========================================
-       🏁 統一フッターセクション（html個別指定版）
-       ========================================== -->
-  <footer class="footer">
+
+<footer class="footer">
     <div class="container">
       <div class="footer-logo">
         <img src="images/image(24).png" alt="Gemaris">
       </div>
       
-      <!-- メインナビ：セクションではなく、ページ（.html）単位でシンプルに繋ぐ -->
       <div class="footer-links">
         <a href="index.html">TOP</a>
         <a href="support.html">サポート</a>
@@ -120,7 +118,6 @@
         <a href="apply.html">応募</a>
       </div>
 
-      <!-- サブナビ：会社概要とプライバシーポリシー -->
       <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
         <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
         <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
@@ -129,11 +126,7 @@
       <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
   </footer>
-  <!-- ==========================================
-       🏁 統一フッターセクション（ここまで）
-       ========================================== -->
-
-<script>
+  <script>
   const hamburger = document.getElementById('js-hamburger');
   const navMenu = document.getElementById('js-nav-menu');
 
