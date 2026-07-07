@@ -57,3 +57,74 @@ body.gemaris-theme {
     font-size: 12.5px !important;
   }
 }
+/* ==========================================================================
+   📊 報酬シミュレーション導線セクション（デザイン完全調和版）
+   ========================================================================== */
+.simulation-lead-section {
+  padding: 15px 20px 25px !important;
+  text-align: center !important;
+}
+
+.simulation-lead-container {
+  max-width: 560px !important; /* plan-char-containerと完全に横幅を統一 */
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+.simulation-lead-text {
+  font-family: 'Times New Roman', 'YuMincho', '游明朝', 'Hiragino Mincho ProN', serif !important;
+  font-size: 14px !important;
+  color: #3a241c !important; /* bodyのベースカラーと統一 */
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 0 18px 0 !important;
+}
+
+.simulation-gold-btn {
+  display: inline-block !important;
+  width: 100% !important; /* 既存の枠組みにジャストフィットさせる */
+  max-width: 420px !important; /* スマホ・PC両方で間伸びしない絶妙なサイズ */
+  padding: 16px 20px !important;
+  background: linear-gradient(135deg, #601214 0%, #400507 100%) !important; /* ボルドー・えんじ系 */
+  color: #ffffff !important;
+  font-family: 'YuMincho', '游明朝', serif !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.08em !important;
+  text-decoration: none !important;
+  border-radius: 6px !important;
+  border: 1px solid #997c56 !important; /* 高級感漂うゴールドの細縁 */
+  box-shadow: 0 6px 15px rgba(96, 18, 20, 0.2), 0 0 8px rgba(153, 124, 86, 0.1) !important;
+  box-sizing: border-box !important;
+  transition: all 0.25s ease !important;
+}
+
+/* ホバー時の優雅なインタラクション */
+.simulation-gold-btn:hover {
+  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, #751a1c 0%, #4d080a 100%) !important;
+  border-color: #c5a880 !important;
+  box-shadow: 0 8px 20px rgba(96, 18, 20, 0.3), 0 0 12px rgba(197, 168, 128, 0.2) !important;
+}
+
+/* 📱 スマホ用レスポンシブ微調整 */
+@media screen and (max-width: 768px) {
+  .simulation-lead-section {
+    padding: 10px 10px 20px !important;
+  }
+  
+  .simulation-lead-container {
+    width: 100% !important;
+  }
+  
+  .simulation-lead-text {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .simulation-gold-btn {
+    width: 90% !important; /* スマホでは画面端から少し余白を持たせて押しやすく */
+    font-size: 14.5px !important;
+    padding: 14px 15px !important;
+  }
+}
