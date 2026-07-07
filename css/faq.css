@@ -1,5 +1,6 @@
 /* ==========================================================================
    よくある質問ページ（faq.html）専用スタイル
+   ✨ 添付画像デザイン再現（Q. 文頭揃え・ぶら下げインデント完全対応版）
    ========================================================================== */
 
 /* 下層共通ページヘッダー */
@@ -10,31 +11,66 @@
   border-bottom: 1px solid #eeeeee !important;
 }
 
-/* FAQ全体のコンテナ */
+/* FAQ全体のコンテナ（カード同士の間隔を上品に保持） */
 .faq-section .faq-list {
-  max-width: 840px !important;
+  max-width: 800px !important;
   margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 25px !important;
+  gap: 30px !important;
 }
 
-/* 各質問のボックス */
-.faq-section .faq-item {
-  background: #fffcf7 !important; /* 暖かみのある白背景 */
-  border: 1px solid #e1dcd6 !important;
-  border-radius: 16px !important;
-  padding: 35px 30px !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+/* 枠線とカード全体のデザイン（温かみのあるアイボリー背景） */
+.faq-section .custom-qa {
+  width: 100% !important;
+  border: 1px solid #d3c2a3 !important; /* 上品なゴールドの細線 */
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background-color: #fdfbf7 !important; /* 生成り・アイボリー */
+  box-shadow: 0 6px 20px rgba(184, 163, 126, 0.15) !important;
   box-sizing: border-box !important;
-  text-align: center !important; /* 中央寄せ */
+  position: relative !important;
+  transition: box-shadow 0.3s ease !important;
 }
 
-/* 質問エリア */
-.faq-section .faq-question {
-  display: block !important; /* 横並び（flex）を解除して縦並びに */
-  margin-bottom: 20px !important;
-  position: relative;
+/* 開いている時は少し影を落として浮かせる */
+.faq-section .custom-qa[open] {
+  box-shadow: 0 8px 25px rgba(184, 163, 126, 0.25) !important;
+}
+
+/* 四隅のクラシカルな装飾ライン（内側の細い二重線） */
+.faq-section .custom-qa::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 6px !important;
+  left: 6px !important;
+  right: 6px !important;
+  bottom: 6px !important;
+  border: 1px solid rgba(211, 194, 163, 0.4) !important;
+  border-radius: 8px !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* 質問をタップするエリア */
+.faq-section .custom-qa-summary {
+  padding: 35px 60px 30px 45px !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  list-style: none !important;
+  position: relative !important;
+  outline: none !important;
+  user-select: none !important;
+  
+  /* 横並びにして、垂直方向の「上揃え」にする（ひし形と1行目の高さを綺麗に揃える） */
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 20px !important;
+}
+
+/* ブラウザ標準の三角マーク（▶）を消去 */
+.faq-section .custom-qa-summary::-webkit-details-marker {
+  display: none !important;
 }
 
 /* ◆ ひし形のナンバリング */
@@ -42,285 +78,15 @@
   width: 32px !important;
   height: 32px !important;
   background-color: #5c1d16 !important; /* 渋めの赤茶色 */
-  margin: 0 auto 15px auto !important;
-  transform: rotate(45deg) !important; /* 正方形を45度回転させてひし形に */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.faq-section .faq-number span {
-  display: block !important;
-  color: #ffffff !important;
-  font-size: 13px !important;
-  font-weight: bold !important;
-  transform: rotate(-45deg) !important; /* 文字だけ逆回転させて元に戻す */
-}
-
-/* 質問テキスト（Q. 〜） */
-.faq-section .faq-question h2 {
-  font-size: 18px !important;
-  color: #4a3b32 !important;
-  line-height: 1.6 !important;
-  margin: 0 0 15px 0 !important;
-  text-align: center !important;
-  font-weight: bold !important;
-  
-  /* 👇 日本語の不自然なブツ切り改行を防ぐ魔法のセット */
-  word-break: normal !important;      /* 単語や文節の途中で変に切らない */
-  line-break: strict !important;      /* 句読点や「？」が行頭に来るのを徹底防止 */
-  overflow-wrap: anywhere !important; /* スマホ画面からはみ出そうな時だけ安全に改行 */
-}
-
-/* 質問の下にある赤い線 */
-.faq-section .faq-question::after {
-  content: "" !important;
-  display: block !important;
-  width: 50px !important;
-  height: 2px !important;
-  background-color: #c93a40 !important; /* カンプの赤いライン色 */
-  margin: 15px auto 0 auto !important;
-}
-
-/* 回答エリア */
-.faq-section .faq-answer {
-  display: block !important;
-  padding-top: 5px !important;
-  border-top: none !important;
-}
-
-/* 回答テキスト */
-.faq-section .faq-answer p {
-  font-size: 15px !important;
-  color: #555555 !important;
-  line-height: 1.8 !important;
   margin: 0 !important;
-  text-align: center !important; /* カンプ通り中央揃え */
-  display: inline-block;
-  max-width: 100%;
-  
-  /* 👇 回答文のブツ切りも綺麗に防止 */
-  word-break: normal !important;
-  line-break: strict !important;
-  overflow-wrap: anywhere !important;
-}
-
-/* 📱 スマホ用レスポンシブ（画面幅768px以下） */
-@media screen and (max-width: 768px) {
-  .faq-section .faq-item {
-    padding: 25px 20px !important;
-  }
-
-  .faq-section .faq-question h2 {
-    font-size: 16px !important; /* スマホで綺麗に収まる絶妙なサイズ */
-  }
-
-  .faq-section .faq-answer p {
-    font-size: 14px !important;
-    text-align: left; /* スマホで長文が中央揃えだと読みづらい場合は左寄せにするのがお勧め */
-  }
-}
-/* --- 既存の .faq-number を少し調整（上下のマージンを最適化） --- */
-.faq-section .faq-number {
-  width: 34px !important;
-  height: 34px !important;
-  background-color: #5c1d16 !important; /* 渋めの赤茶色 */
-  margin: 0 auto 20px auto !important; /* 下の余白を少し広げた */
   transform: rotate(45deg) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important; /* 文字の高さに合わせる微調整 */
 }
 
-.faq-section .faq-number span {
-  display: block !important;
-  color: #ffffff !important;
-  font-size: 14px !important; /* 13pxから少し視認性アップ */
-  font-weight: bold !important;
-  transform: rotate(-45deg) !important;
-}
-
-/* --- 質問テキスト（h2）の前に「Q」を大きく表示させる追記 --- */
-.faq-section .faq-question h2 {
-  font-size: 20px !important; /* 少し大きく */
-  color: #4a3b32 !important;
-  line-height: 1.6 !important;
-  margin: 0 !important;
-  text-align: center !important;
-  font-weight: bold !important;
-  
-  word-break: normal !important;
-  line-break: strict !important;
-  overflow-wrap: anywhere !important;
-}
-
-/* 擬似要素で「Q」を赤文字で強調 */
-.faq-section .faq-question h2::before {
-  content: "Q. " !important;
-  color: #c93a40 !important; /* 赤いライン色と統一 */
-  font-size: 24px !important; /* テキストより一回り大きくして目立たせる */
-  font-family: "Georgia", serif !important; /* 高級感のあるフォントに */
-  margin-right: 4px !important;
-}
-
-/* 質問の下にある赤い線（余白の微調整） */
-.faq-section .faq-question::after {
-  content: "" !important;
-  display: block !important;
-  width: 50px !important;
-  height: 2px !important;
-  background-color: #c93a40 !important;
-  margin: 20px auto 0 auto !important; /* 上下の余白を20pxに整えた */
-}
-/* ==========================================================================
-   アコーディオン（開閉式）対応スタイルの追加・上書き
-   ========================================================================== */
-
-/* 既存の「赤い仕切り線」を完全に消去 */
-.faq-section .faq-question::after {
-  display: none !important;
-}
-
-/* タップできるエリア（summary）の設定 */
-.faq-section .faq-question {
-  cursor: pointer !important;
-  outline: none !important;
-  padding: 0 20px !important;
-  position: relative !important;
-  user-select: none !important;
-}
-
-/* ブラウザ標準の三角マーク（▶）を消す（Chrome, Safari, Firefox対応） */
-.faq-section .faq-question::-webkit-details-marker {
-  display: none !important;
-}
-.faq-section .faq-question {
-  list-style: none !important;
-}
-
-/* 質問エリアをホバーしたときに少し浮かせる（PC用） */
-.faq-section .faq-item[open] {
-  box-shadow: 0 6px 20px rgba(74, 59, 50, 0.05) !important;
-}
-
-/* 回答エリアのスタイル調整（開いたときに綺麗な余白を持たせる） */
-.faq-section .faq-answer {
-  margin-top: 25px !important;
-  padding-top: 25px !important;
-  border-top: 1px dashed #e1dcd6 !important; /* 赤い線の代わりに目立たない上品な点線に */
-  animation: fadeIn 0.4s ease !important; /* ふんわり表示されるアニメーション */
-}
-
-/* 下部に配置する「＋」「ー」を表現するアイコン */
-.faq-toggle-icon {
-  display: block !important;
-  width: 20px !important;
-  height: 20px !important;
-  margin: 15px auto 0 auto !important;
-  position: relative !important;
-  transition: transform 0.3s ease !important;
-}
-
-/* プラスの横線 */
-.faq-toggle-icon::before {
-  content: "" !important;
-  position: absolute !important;
-  width: 14px !important;
-  height: 2px !important;
-  background-color: #c93a40 !important; /* Gemarisブランドの赤 */
-  top: 9px !important;
-  left: 3px !important;
-}
-
-/* プラスの縦線 */
-.faq-toggle-icon::after {
-  content: "" !important;
-  position: absolute !important;
-  width: 2px !important;
-  height: 14px !important;
-  background-color: #c93a40 !important;
-  top: 3px !important;
-  left: 9px !important;
-  transition: opacity 0.3s ease !important;
-}
-
-/* 【開いている状態（open）】の時のアイコン変化 */
-.faq-item[open] .faq-toggle-icon::after {
-  opacity: 0 !important; /* 縦線を消して「マイナス」にする */
-}
-.faq-item[open] .faq-toggle-icon {
-  transform: rotate(180deg) !important; /* くるっと回転させる */
-}
-
-/* ふんわり展開するアニメーション設定 */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* ==========================================================================
-   🌸 ご提示いただいたイメージ（ピンク背景・アロー回転）の統合スタイル
-   ========================================================================== */
-
-/* 既存の個別ボックス指定を上書き・一貫したリスト幅の確保 */
-.faq-section .faq-list {
-  max-width: 840px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 25px !important;
-}
-
-/* アコーディオン全体の枠組み */
-.faq-section .custom-qa {
-  width: 100% !important;
-  border: 2px solid #e5b7b9 !important; /* イラストの枠線に近い淡いピンク */
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  background-color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
-  box-sizing: border-box !important;
-  transition: box-shadow 0.3s ease !important;
-}
-
-/* 開いている時は少し影を落として浮かせる */
-.faq-section .custom-qa[open] {
-  box-shadow: 0 8px 25px rgba(166, 63, 69, 0.05) !important;
-}
-
-/* 質問をタップするエリア */
-.faq-section .custom-qa-summary {
-  padding: 30px 45px 25px 45px !important; /* アローとひし形に合わせたゆったりした余白 */
-  background-color: #fff5f6 !important; /* イラストの背景にあるような薄いピンク */
-  cursor: pointer !important;
-  list-style: none !important;
-  position: relative !important;
-  outline: none !important;
-  user-select: none !important;
-  text-align: center !important;
-}
-
-/* ブラウザ標準の三角（▶）を消去 */
-.faq-section .custom-qa-summary::-webkit-details-marker {
-  display: none !important;
-}
-
-/* ひし形ナンバリング（中心をキープ） */
-.faq-section .faq-number {
-  width: 32px !important;
-  height: 32px !important;
-  background-color: #5c1d16 !important; /* 渋めの赤茶色 */
-  margin: 0 auto 15px auto !important;
-  transform: rotate(45deg) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
 .faq-section .faq-number span {
   display: block !important;
   color: #ffffff !important;
@@ -329,88 +95,106 @@
   transform: rotate(-45deg) !important;
 }
 
-/* 質問のテキスト（h2） */
+/* 質問のテキスト（h2：ボルドーカラー＆明朝セリフ体） */
 .faq-section .custom-qa-summary h2 {
-  font-size: 18px !important;
-  color: #a63f45 !important; /* イラストの深みのある赤 */
-  line-height: 1.6 !important;
+  font-size: 22px !important;
+  color: #510d11 !important; /* 深みのある美しいボルドー */
+  font-family: "Sawarabi Mincho", "Noto Serif JP", "Georgia", serif !important;
+  line-height: 1.5 !important;
   margin: 0 !important;
-  display: inline-block !important;
   font-weight: bold !important;
+  text-align: left !important;
+  flex: 1 !important;
+  
+  /* 💡 魔法のぶら下げインデント設定（Q.の幅だけ2行目を右に下げる） */
+  padding-left: 1.5em !important;
+  text-indent: -1.5em !important;
+  
+  /* 日本語の不自然なブツ切り改行防止セット */
   word-break: normal !important;
   line-break: strict !important;
   overflow-wrap: anywhere !important;
 }
 
-/* 既存の「古い赤い下線」を完全消去 */
+/* 右側の開閉「▼」アロー（アンティークゴールド） */
 .faq-section .custom-qa-summary::after {
-  display: none !important;
-}
-
-/* 新しいカスタムの矢印（右側に綺麗に配置） */
-.faq-section .custom-qa-summary::before {
   content: '▼' !important;
   position: absolute !important;
-  right: 25px !important;
+  right: 30px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  font-size: 0.8em !important;
-  color: #a63f45 !important;
+  font-size: 0.7em !important;
+  color: #bfa881 !important;
   transition: transform 0.3s !important;
 }
 
 /* アコーディオンが開いたときに矢印をひっくり返す */
-.faq-section .custom-qa[open] .custom-qa-summary::before {
+.faq-section .custom-qa[open] .custom-qa-summary::after {
   transform: translateY(-50%) rotate(180deg) !important;
 }
 
-/* 回答エリアのコンテナ設定（パタっと開いたときの設定） */
-.faq-section .faq-answer {
-  padding: 30px !important;
-  background-color: #ffffff !important;
-  border-top: 1px solid #e5b7b9 !important; /* 枠と同じピンクの一本線でシンプルに区切る */
-  animation: faqFadeIn 0.35s ease !important;
+/* アコーディオンが開いたときの、質問と回答の間にある薄い境界線 */
+.faq-section .custom-qa[open] .custom-qa-summary {
+  border-bottom: 1px solid rgba(211, 194, 163, 0.4) !important;
 }
 
-/* 回答テキスト */
+/* 回答エリアのコンテナ設定（ふんわり展開） */
+.faq-section .faq-answer {
+  /* 💡 左側の余白を計算（ひし形32px + gap20px + Q.の引っ込み分を合算） */
+  padding: 30px 50px 35px 97px !important; 
+  background-color: transparent !important;
+  animation: faqFadeIn 0.35s ease !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* 回答テキスト（高級感のあるダークブラウン・明朝体） */
 .faq-section .faq-answer p {
-  font-size: 15px !important;
-  color: #555555 !important;
-  line-height: 1.8 !important;
+  font-size: 16px !important;
+  color: #2c1e15 !important;
+  font-family: "Noto Serif JP", serif !important;
+  line-height: 1.9 !important;
   margin: 0 !important;
-  text-align: center !important;
+  text-align: left !important;
   display: block !important;
   width: 100% !important;
+
+  /* 回答文のブツ切り改行防止 */
+  word-break: normal !important;
+  line-break: strict !important;
+  overflow-wrap: anywhere !important;
 }
 
-/* ふんわり展開するアニメーション */
+/* フェードインアニメーション */
 @keyframes faqFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* スマホ用微調整 */
+/* 📱 スマホ用レスポンシブ微調整（画面幅768px以下） */
 @media screen and (max-width: 768px) {
   .faq-section .custom-qa-summary {
-    padding: 25px 35px 20px 35px !important;
+    padding: 25px 40px 20px 20px !important;
+    gap: 12px !important;
+  }
+  .faq-section .faq-number {
+    width: 28px !important;
+    height: 28px !important;
+    margin-top: 1px !important;
+  }
+  .faq-section .faq-number span {
+    font-size: 11px !important;
   }
   .faq-section .custom-qa-summary h2 {
     font-size: 16px !important;
+    /* スマホ用にインデント幅を微調整 */
+    padding-left: 1.6em !important;
+    text-indent: -1.6em !important;
   }
   .faq-section .faq-answer {
-    padding: 25px 20px !important;
+    padding: 20px 20px 25px 20px !important; /* スマホはすっきり全面表示 */
   }
-  .faq-section .faq-answer p {
-    font-size: 14px !important;
-    text-align: left !important; /* 長文が読みやすいようスマホは左寄せ */
-  }
-  .faq-section .custom-qa-summary::before {
-    right: 15px !important; /* スマホでは矢印を少し外側に寄せる */
+  .faq-section .custom-qa-summary::after {
+    right: 15px !important;
   }
 }
