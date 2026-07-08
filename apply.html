@@ -20,11 +20,18 @@ href="css/style.css">
     margin: 0 auto;
     padding: 0 15px;
   }
-  .form-group {
-    margin-bottom: 25px;
+/* --- 修正版ラベルスタイル（バッジを絶対に右側に固定する） --- */
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2b2b2b;
+    font-size: 0.95rem;
     display: flex;
-    flex-direction: column; /* ラベルと入力を確実に縦並びにする */
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between; /* 🚨 文字とバッジを綺麗に左右両端に割り振る */
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .form-group label {
     font-weight: 600;
@@ -37,24 +44,26 @@ href="css/style.css">
     width: 100%;
   }
   
-  /* 必須・任意の視覚的バッジスタイル */
-  .badge-required {
-    background-color: #9c2a2a; /* Gemarisレッド */
-    color: #ffffff;
+  /* 必須・任意の視覚的バッジ（絶対に縮まない・改行させない） */
+  .badge-required, .badge-optional {
+    flex-shrink: 0; /* 🚨 画面が狭くなっても絶対にバッジ自体を縮ませない */
+    white-space: nowrap; /* 🚨 バッジの中の文字を絶対に改行させない */
     font-size: 0.7rem;
-    padding: 2px 6px;
+    padding: 3px 8px; /* 縦横のパディングを少し広げて綺麗に */
     border-radius: 4px;
     font-weight: bold;
-    line-height: 1;
+    line-height: 1.2;
+    text-align: center;
   }
-  .badge-optional {
-    background-color: #666666; /* シックなグレー */
+
+  .badge-required {
+    background-color: #9c2a2a;
     color: #ffffff;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
-    line-height: 1;
+  }
+  
+  .badge-optional {
+    background-color: #666666;
+    color: #ffffff;
   }
 
   /* 入力要素を画面幅いっぱいに綺麗に広げる */
@@ -113,7 +122,7 @@ href="css/style.css">
 <div class="container">
 
 <form
-action="thanks.html"
+action="https://ssgform.com/s/8dTiH90PLkhn"
 method="post"
 enctype="multipart/form-data"
 id="js-apply-form"
@@ -248,7 +257,7 @@ class="apply-form">
   box-sizing: border-box;
 ">
   <label style="margin-bottom: 4px;">
-    連絡先アカウント情報 <span class="badge-required">どちらか片方必須</span>
+    連絡先アカウント情報 <span class="badge-required">ABいずれか必須</span>
   </label>
   <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px; line-height: 1.4;">
     上記でチェックを入れたツールの「ID・リンク・メールアドレスの入力」をするか、または「QRコード画像」を添付してください。
@@ -403,7 +412,7 @@ class="apply-form">
 
             if (!hasText && !hasFile) {
                 event.preventDefault(); 
-                alert('【連絡先アカウント情報】のご入力をお願いします。\n「方法A：IDやリンクの入力」または「方法B：QRコード画像の添付」のどちらか片方は必須となります！');
+                alert('【連絡先アカウント情報】のご入力をお願いします。\n「方法A：IDやリンクの入力」または「方法B：QRコード画像の添付」のABいずれか必須となります！');
                 snsDetail.focus();
             }
         });
