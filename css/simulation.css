@@ -1,44 +1,40 @@
 /* ==========================================================================
-   Gemarisデザイン完全再現版：報酬シミュレーション（完成版スタイル）
+   Gemarisデザイン：報酬・キープシミュレーション（完全版スタイル）
    ========================================================================== */
 
 /* 👑 全体のベース（他ページと完全統一） */
 body.gemaris-theme {
   font-family: 'Times New Roman', 'YuMincho', '游明朝', 'Hiragino Mincho ProN', 'Hiragino Sans', serif !important;
-  background-color: #fdfaf5 !important; /* 統一の生成りカラー */
-  color: #3a241c !important; /* ディープブラウン */
+  background-color: #fdfaf5 !important;
+  color: #3a241c !important;
   line-height: 1.6 !important;
   margin: 0;
   padding: 0;
 }
 
-/* 👑 ページタイトルエリア（高級下層ヘッダー風） */
+/* 👑 ページタイトルエリア */
 .simulation-header {
   text-align: center !important;
   padding: 60px 20px 40px !important;
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2dcd3 !important;
 }
-
 .simulation-header h1 {
   font-family: 'YuMincho', '游明朝', serif !important;
   font-size: 26px !important;
-  color: #601214 !important; /* 象徴たるボルドー */
+  color: #601214 !important;
   margin: 0 0 12px 0 !important;
   letter-spacing: 0.08em !important;
   font-weight: bold !important;
 }
-
-/* タイトルの下に添える上品なゴールドの飾り線 */
 .simulation-header h1::after {
   content: "" !important;
   display: block !important;
   width: 40px !important;
   height: 2px !important;
-  background-color: #997c56 !important; /* ゴールド */
+  background-color: #997c56 !important;
   margin: 15px auto 0 auto !important;
 }
-
 .simulation-header p {
   font-size: 14px !important;
   color: #666666 !important;
@@ -48,13 +44,54 @@ body.gemaris-theme {
 
 /* 👑 メインコンテンツエリア */
 .simulation-main {
-  max-width: 640px !important; /* テーブル幅に合わせた美しいコンテナ */
+  max-width: 640px !important;
   margin: 40px auto 60px auto !important;
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
 
-/* アコーディオンの外枠 */
+/* 📢 アプリ別の境界プラカード（中央寄せ完全最適化） */
+.app-section-block {
+  margin-bottom: 50px;
+}
+.app-placard {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 16px 20px !important;
+  margin-bottom: 24px !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+.app-placard.palmu-color {
+  background: linear-gradient(135deg, #b81c31 0%, #7d0d1a 100%) !important;
+}
+.app-placard.pococha-color {
+  background: linear-gradient(135deg, #4f5d73 0%, #283142 100%) !important;
+}
+.app-logo-text {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.2 !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+.app-sub-text {
+  font-size: 0.8rem !important;
+  opacity: 0.95 !important;
+  margin-top: 6px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* 👑 アコーディオン（details/summary） */
 .table-container {
   width: 100% !important;
   margin-bottom: 25px !important;
@@ -63,14 +100,10 @@ body.gemaris-theme {
   border-radius: 8px !important;
   box-shadow: 0 6px 18px rgba(58, 36, 28, 0.04) !important;
   overflow: hidden !important;
-  box-sizing: border-box !important;
 }
-
 details {
   width: 100% !important;
 }
-
-/* タップエリア（タイトル） */
 summary {
   font-family: 'YuMincho', '游明朝', serif !important;
   font-size: 1.15rem !important;
@@ -84,12 +117,9 @@ summary {
   user-select: none !important;
   transition: background-color 0.3s ease !important;
 }
-
 summary::-webkit-details-marker {
   display: none !important;
 }
-
-/* 高級感を演出するダイヤ型アイコン */
 summary::after {
   content: '◆' !important;
   position: absolute !important;
@@ -100,35 +130,29 @@ summary::after {
   color: #997c56 !important;
   transition: transform 0.3s ease, color 0.3s ease !important;
 }
-
 details[open] summary {
   background-color: #faf6f0 !important;
   border-bottom: 1px solid #e2dcd3 !important;
 }
-
 details[open] summary::after {
   transform: translateY(-50%) rotate(45deg) scale(1) !important;
   color: #601214 !important;
 }
-
 summary:hover {
   background-color: #faf6f0 !important;
 }
-
-/* アコーディオン内部 */
 .details-content {
   padding: 15px 24px 24px 24px !important;
   background-color: #ffffff !important;
 }
 
-/* テーブルスタイル */
+/* 👑 テーブル基本構造（報酬シミュレーション用） */
 table {
   width: 100% !important;
   border-collapse: collapse !important;
   margin-top: 10px !important;
   font-size: 0.95rem !important;
 }
-
 th {
   background-color: #601214 !important;
   color: #ffffff !important;
@@ -139,18 +163,24 @@ th {
   font-size: 0.9rem !important;
   letter-spacing: 0.05em !important;
 }
-
 td {
   border: 1px solid #e2dcd3 !important;
   padding: 13px 10px !important;
   color: #4a3c31 !important;
 }
 
+/* 🎯 修正：各表のランク列を中央寄せにする設定 */
 .rank {
   font-weight: bold !important;
   font-family: 'Times New Roman', serif !important;
   background-color: #faf6f0 !important;
   color: #601214 !important;
+  text-align: center !important; /* 中央寄せ */
+}
+.keep-table td.rank-lbl {
+  font-weight: 700;
+  color: #a9182a;
+  text-align: center !important; /* キープ表のランクも中央寄せ */
 }
 
 .num {
@@ -158,17 +188,14 @@ td {
   font-variant-numeric: tabular-nums !important;
   font-family: 'Times New Roman', Arial, sans-serif !important;
 }
-
 .my-reward {
   font-weight: bold !important;
   color: #601214 !important;
   background-color: #fff9f5 !important;
 }
-
 tr:hover td {
   background-color: #fdfaf5 !important;
 }
-
 .table-note {
   font-size: 0.75rem !important;
   color: #8a7667 !important;
@@ -177,36 +204,107 @@ tr:hover td {
   line-height: 1.5 !important;
 }
 
-/* 📱 スマホ用レスポンシブ（画面幅768px以下） */
+/* 📊 ランク別還元率専用インジケーター */
+.rate-display-block {
+  background-color: #fcfbfa;
+  border: 1px solid #e6e3df;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rate-tag-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #a9182a;
+  letter-spacing: 0.05em;
+  border-left: 3px solid #a9182a;
+  padding-left: 8px;
+  line-height: 1;
+}
+.rate-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rate-chip {
+  background: #f0ede9;
+  border: 1px solid #dfdad4;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+.chip-rank { color: #5a5854; font-weight: 500; }
+.chip-val { color: #1a1917; font-weight: 700; }
+.rate-chip.highlight-ss { background: #fff4f5; border-color: #f7d2d6; }
+.rate-chip.highlight-ss .chip-rank { color: #a9182a; font-weight: 700; }
+.rate-chip.highlight-ss .chip-val { color: #a9182a; font-size: 0.95rem; }
+
+/* 📊 Palmu専用：ランクキーププラン表用追加スタイル */
+.keep-table-wrapper {
+  overflow-x: auto;
+}
+.keep-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.keep-table th {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 0.8rem !important;
+  white-space: nowrap;
+  background-color: #601214 !important; /* 報酬テーブルと統一 */
+  color: #ffffff !important;
+  padding: 10px;
+}
+.keep-table td {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  padding: 10px;
+  border-bottom: 1px solid #e2dcd3;
+  color: #1a1917;
+}
+.keep-table tr.highlight-s-row { background-color: rgba(169, 24, 42, 0.03); }
+
+.plan-badge { font-weight: 700; font-size: 0.8rem; }
+.plan-badge.p-a { color: #2b6cb0; }
+.plan-badge.p-b { color: #b7791f; }
+.plan-badge.p-c { color: #a9182a; }
+
+.meter-plan-box { margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e6e3df; }
+.meter-note-title { font-size: 0.8rem; color: #5a5854; margin-bottom: 10px; font-weight: 500; }
+.meter-cards { display: flex; gap: 10px; }
+.meter-card { flex: 1; background: #fcfbfa; border: 1px solid #e6e3df; padding: 10px; border-radius: 4px; }
+.m-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 2px 6px; color: #fff; border-radius: 3px; margin-bottom: 6px; }
+.m-badge.p-a { background-color: #2b6cb0; }
+.m-badge.p-b { background-color: #b7791f; }
+.m-badge.p-c { background-color: #a9182a; }
+.meter-card p { margin: 0; font-size: 0.75rem; color: #5a5854; line-height: 1.4; }
+
+/* 📱 レスポンシブ・各種デバイス最適化（メディアクエリ統合） */
 @media screen and (max-width: 768px) {
-  .simulation-header {
-    padding: 40px 15px 30px !important;
-  }
+  .simulation-header { padding: 40px 15px 30px !important; }
+  .simulation-header h1 { font-size: 20px !important; }
+  .simulation-main { margin: 20px auto 40px auto !important; padding: 0 10px !important; }
+  summary { font-size: 1.05rem !important; padding: 16px 18px !important; }
+  summary::after { right: 18px !important; }
+  .details-content { padding: 10px 12px 18px 12px !important; }
+  th, td { padding: 11px 6px !important; font-size: 0.85rem !important; }
+}
+
+@media screen and (max-width: 480px) {
+  .rate-display-block { padding: 12px; }
+  .rate-chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .rate-chip { justify-content: space-between; padding: 6px 10px; }
+  .rate-chip.highlight-ss { grid-column: span 2; }
   
-  .simulation-header h1 {
-    font-size: 20px !important;
-  }
-  
-  .simulation-main {
-    margin: 20px auto 40px auto !important;
-    padding: 0 10px !important;
-  }
-  
-  summary {
-    font-size: 1.05rem !important;
-    padding: 16px 18px !important;
-  }
-  
-  summary::after {
-    right: 18px !important;
-  }
-  
-  .details-content {
-    padding: 10px 12px 18px 12px !important;
-  }
-  
-  th, td {
-    padding: 11px 6px !important; /* 横スクロールを完全に阻止する余白 */
-    font-size: 0.85rem !important;
-  }
+  .meter-cards { flex-direction: column; gap: 6px; }
+  .meter-card { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; }
+  .m-badge { margin-bottom: 0 !important; }
 }
