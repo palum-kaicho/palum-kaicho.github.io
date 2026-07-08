@@ -37,35 +37,52 @@
     </div>
   </section>
 
-  <main class="simulation-main">
+<main class="simulation-main">
+
+  <div class="app-section-block">
+    <div class="app-placard palmu-color">
+      <span class="app-logo-text">Palmu</span>
+      <span class="app-sub-text">パルム 報酬・キープシミュレーション</span>
+    </div>
 
     <div class="table-container">
       <details>
-        <summary>フルサポート プラン（palmu）</summary>
+        <summary>フルサポート契約</summary>
         <div class="details-content">
+          
+          <div class="rate-display-block">
+            <span class="rate-tag-label">ランク別還元率</span>
+            <div class="rate-chips">
+              <span class="rate-chip"><strong class="chip-rank">C1〜B1</strong><strong class="chip-val">75%</strong></span>
+              <span class="rate-chip"><strong class="chip-rank">B2〜A2</strong><strong class="chip-val">80%</strong></span>
+              <span class="rate-chip"><strong class="chip-rank">A3〜A4</strong><strong class="chip-val">85%</strong></span>
+              <span class="rate-chip"><strong class="chip-rank">A5〜S</strong><strong class="chip-val">90%</strong></span>
+              <span class="rate-chip highlight-ss"><strong class="chip-rank">SS</strong><strong class="chip-val">95%</strong></span>
+            </div>
+          </div>
+
           <table>
             <thead>
               <tr>
                 <th>ランク</th>
-                <th>還元率</th>
                 <th>配信ダイヤ</th>
                 <th>報酬</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td class="rank">C1</td><td class="num">75%</td><td class="num">200</td><td class="num my-reward">¥1,890</td></tr>
-              <tr><td class="rank">C2</td><td class="num">75%</td><td class="num">500</td><td class="num my-reward">¥4,725</td></tr>
-              <tr><td class="rank">C3</td><td class="num">75%</td><td class="num">1,000</td><td class="num my-reward">¥9,450</td></tr>
-              <tr><td class="rank">B1</td><td class="num">75%</td><td class="num">2,600</td><td class="num my-reward">¥25,830</td></tr>
-              <tr><td class="rank">B2</td><td class="num">80%</td><td class="num">4,000</td><td class="num my-reward">¥34,944</td></tr>
-              <tr><td class="rank">B3</td><td class="num">80%</td><td class="num">6,500</td><td class="num my-reward">¥59,472</td></tr>
-              <tr><td class="rank">A1</td><td class="num">80%</td><td class="num">10,000</td><td class="num my-reward">¥83,328</td></tr>
-              <tr><td class="rank">A2</td><td class="num">80%</td><td class="num">12,500</td><td class="num my-reward">¥106,512</td></tr>
-              <tr><td class="rank">A3</td><td class="num">85%</td><td class="num">18,000</td><td class="num my-reward">¥165,648</td></tr>
-              <tr><td class="rank">A4</td><td class="num">85%</td><td class="num">22,000</td><td class="num my-reward">¥208,488</td></tr>
-              <tr><td class="rank">A5</td><td class="num">90%</td><td class="num">30,000</td><td class="num my-reward">¥308,448</td></tr>
-              <tr><td class="rank">S</td><td class="num">90%</td><td class="num">45,000</td><td class="num my-reward">¥451,332</td></tr>
-              <tr><td class="rank">SS</td><td class="num">95%</td><td class="num">64,000</td><td class="num my-reward">¥753,312</td></tr>
+              <tr><td class="rank">C1</td><td class="num">200</td><td class="num my-reward">¥1,890</td></tr>
+              <tr><td class="rank">C2</td><td class="num">500</td><td class="num my-reward">¥4,725</td></tr>
+              <tr><td class="rank">C3</td><td class="num">1,000</td><td class="num my-reward">¥9,450</td></tr>
+              <tr><td class="rank">B1</td><td class="num">2,600</td><td class="num my-reward">¥29,840</td></tr>
+              <tr><td class="rank">B2</td><td class="num">4,000</td><td class="num my-reward">¥41,600</td></tr>
+              <tr><td class="rank">B3</td><td class="num">6,500</td><td class="num my-reward">¥64,400</td></tr>
+              <tr><td class="rank">A1</td><td class="num">10,000</td><td class="num my-reward">¥103,200</td></tr>
+              <tr><td class="rank">A2</td><td class="num">12,500</td><td class="num my-reward">¥131,600</td></tr>
+              <tr><td class="rank">A3</td><td class="num">18,000</td><td class="num my-reward">¥176,000</td></tr>
+              <tr><td class="rank">A4</td><td class="num">22,000</td><td class="num my-reward">¥222,400</td></tr>
+              <tr><td class="rank">A5</td><td class="num">30,000</td><td class="num my-reward">¥288,000</td></tr>
+              <tr><td class="rank">S</td><td class="num">45,000</td><td class="num my-reward">¥424,000</td></tr>
+              <tr><td class="rank">SS</td><td class="num">64,000</td><td class="num my-reward">¥604,000</td></tr>
             </tbody>
           </table>
           <div class="table-note">※ 2026/05/25のスコアを参照しています。</div>
@@ -75,7 +92,7 @@
 
     <div class="table-container">
       <details>
-        <summary>セルフプロ プラン（palmu）</summary>
+        <summary>セルフプロ契約</summary>
         <div class="details-content">
           <table>
             <thead>
@@ -89,16 +106,16 @@
               <tr><td class="rank">C1</td><td class="num">200</td><td class="num my-reward">¥2,520</td></tr>
               <tr><td class="rank">C2</td><td class="num">500</td><td class="num my-reward">¥6,300</td></tr>
               <tr><td class="rank">C3</td><td class="num">1,000</td><td class="num my-reward">¥12,600</td></tr>
-              <tr><td class="rank">B1</td><td class="num">2,600</td><td class="num my-reward">¥34,440</td></tr>
-              <tr><td class="rank">B2</td><td class="num">4,000</td><td class="num my-reward">¥43,680</td></tr>
-              <tr><td class="rank">B3</td><td class="num">6,500</td><td class="num my-reward">¥74,340</td></tr>
-              <tr><td class="rank">A1</td><td class="num">10,000</td><td class="num my-reward">¥104,160</td></tr>
-              <tr><td class="rank">A2</td><td class="num">12,500</td><td class="num my-reward">¥133,140</td></tr>
-              <tr><td class="rank">A3</td><td class="num">18,000</td><td class="num my-reward">¥194,880</td></tr>
-              <tr><td class="rank">A4</td><td class="num">22,000</td><td class="num my-reward">¥245,280</td></tr>
-              <tr><td class="rank">A5</td><td class="num">30,000</td><td class="num my-reward">¥342,720</td></tr>
-              <tr><td class="rank">S</td><td class="num">45,000</td><td class="num my-reward">¥501,480</td></tr>
-              <tr><td class="rank">SS</td><td class="num">64,000</td><td class="num my-reward">¥792,960</td></tr>
+              <tr><td class="rank">B1</td><td class="num">2,600</td><td class="num my-reward">¥22,380</td></tr>
+              <tr><td class="rank">B2</td><td class="num">4,000</td><td class="num my-reward">¥33,280</td></tr>
+              <tr><td class="rank">B3</td><td class="num">6,500</td><td class="num my-reward">¥51,520</td></tr>
+              <tr><td class="rank">A1</td><td class="num">10,000</td><td class="num my-reward">¥82,560</td></tr>
+              <tr><td class="rank">A2</td><td class="num">12,500</td><td class="num my-reward">¥105,280</td></tr>
+              <tr><td class="rank">A3</td><td class="num">18,000</td><td class="num my-reward">¥149,600</td></tr>
+              <tr><td class="rank">A4</td><td class="num">22,000</td><td class="num my-reward">¥189,040</td></tr>
+              <tr><td class="rank">A5</td><td class="num">30,000</td><td class="num my-reward">¥259,200</td></tr>
+              <tr><td class="rank">S</td><td class="num">45,000</td><td class="num my-reward">¥381,600</td></tr>
+              <tr><td class="rank">SS</td><td class="num">64,000</td><td class="num my-reward">¥573,800</td></tr>
             </tbody>
           </table>
           <div class="table-note">※ 2026/05/25のスコアを参照しています。</div>
@@ -108,36 +125,104 @@
 
     <div class="table-container">
       <details>
-        <summary>フルサポート プラン（Pococha）</summary>
+        <summary>ランクキープ必要コイン数</summary>
         <div class="details-content">
+          <div class="keep-table-wrapper">
+            <table class="keep-table">
+              <thead>
+                <tr>
+                  <th>ランク</th>
+                  <th>キープ目安</th>
+                  <th>4週間目安</th>
+                  <th>プラン</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="rank-lbl">B1</td><td class="num">24,300</td><td class="num">97,200</td><td class="plan-badge p-a">A</td></tr>
+                <tr><td class="rank-lbl">B2</td><td class="num">32,000</td><td class="num">128,000</td><td class="plan-badge p-a">A</td></tr>
+                <tr><td class="rank-lbl">B3</td><td class="num">48,000</td><td class="num">192,000</td><td class="plan-badge p-c">C</td></tr>
+                <tr><td class="rank-lbl">A1</td><td class="num">79,000</td><td class="num">316,000</td><td class="plan-badge p-b">B</td></tr>
+                <tr><td class="rank-lbl">A2</td><td class="num">102,000</td><td class="num">408,000</td><td class="plan-badge p-b">B</td></tr>
+                <tr><td class="rank-lbl">A3</td><td class="num">130,000</td><td class="num">520,000</td><td class="plan-badge p-c">C</td></tr>
+                <tr><td class="rank-lbl">A4</td><td class="num">168,000</td><td class="num">672,000</td><td class="plan-badge p-c">C</td></tr>
+                <tr><td class="rank-lbl">A5</td><td class="num">210,000</td><td class="num">840,000</td><td class="plan-badge p-c">C</td></tr>
+                <tr class="highlight-s-row"><td class="rank-lbl">S</td><td class="num">305,000</td><td class="num">1,220,000</td><td class="plan-badge p-c">C</td></tr>
+                <tr><td class="rank-lbl">SS</td><td class="num">435,000</td><td class="num">1,740,000</td><td class="plan-badge p-c">C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="meter-plan-box">
+            <p class="meter-note-title">※ ランク毎にキープ効率の良いメータープラン（下記）が推奨されます</p>
+            <div class="meter-cards">
+              <div class="meter-card">
+                <span class="m-badge p-a">プラン A</span>
+                <p>＋4を1回 / ＋2を2回</p>
+              </div>
+              <div class="meter-card">
+                <span class="m-badge p-b">プラン B</span>
+                <p>＋4を2回</p>
+              </div>
+              <div class="meter-card">
+                <span class="m-badge p-c">プラン C</span>
+                <p>＋6を1回</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="app-section-block">
+    <div class="app-placard pococha-color">
+      <span class="app-logo-text">Pococha</span>
+      <span class="app-sub-text">ポコチャ 報酬シミュレーション</span>
+    </div>
+
+    <div class="table-container">
+      <details>
+        <summary>フルサポート契約</summary>
+        <div class="details-content">
+          
+          <div class="rate-display-block">
+            <span class="rate-tag-label">ランク別還元率</span>
+            <div class="rate-chips">
+              <span class="rate-chip"><strong class="chip-rank">D1〜D3</strong><strong class="chip-val">75%</strong></span>
+              <span class="rate-chip"><strong class="chip-rank">C1〜C3</strong><strong class="chip-val">80%</strong></span>
+              <span class="rate-chip"><strong class="chip-rank">B1〜B3</strong><strong class="chip-val">85%</strong></span>
+              <span class="rate-chip"><strong class="chip-rank">A1〜A3</strong><strong class="chip-val">90%</strong></span>
+              <span class="rate-chip highlight-ss"><strong class="chip-rank">S1〜S6</strong><strong class="chip-val">95%</strong></span>
+            </div>
+          </div>
+
           <table>
             <thead>
               <tr>
                 <th>ランク</th>
-                <th>還元率</th>
                 <th>時間<br>ダイヤ</th>
                 <th>報酬</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td class="rank">D1</td><td class="num">75%</td><td class="num">50</td><td class="num my-reward">¥4,603</td></tr>
-              <tr><td class="rank">D2</td><td class="num">75%</td><td class="num">100</td><td class="num my-reward">¥11,402</td></tr>
-              <tr><td class="rank">D3</td><td class="num">75%</td><td class="num">150</td><td class="num my-reward">¥19,992</td></tr>
-              <tr><td class="rank">C1</td><td class="num">80%</td><td class="num">400</td><td class="num my-reward">¥48,649</td></tr>
-              <tr><td class="rank">C2</td><td class="num">80%</td><td class="num">600</td><td class="num my-reward">¥73,589</td></tr>
-              <tr><td class="rank">C3</td><td class="num">80%</td><td class="num">800</td><td class="num my-reward">¥101,611</td></tr>
-              <tr><td class="rank">B1</td><td class="num">85%</td><td class="num">1200</td><td class="num my-reward">¥168,162</td></tr>
-              <tr><td class="rank">B2</td><td class="num">85%</td><td class="num">1400</td><td class="num my-reward">¥200,554</td></tr>
-              <tr><td class="rank">B3</td><td class="num">85%</td><td class="num">1600</td><td class="num my-reward">¥226,399</td></tr>
-              <tr><td class="rank">A1</td><td class="num">90%</td><td class="num">1900</td><td class="num my-reward">¥280,764</td></tr>
-              <tr><td class="rank">A2</td><td class="num">90%</td><td class="num">2200</td><td class="num my-reward">¥335,676</td></tr>
-              <tr><td class="rank">A3</td><td class="num">90%</td><td class="num">2500</td><td class="num my-reward">¥369,791</td></tr>
-              <tr><td class="rank">S1</td><td class="num">95%</td><td class="num">3000</td><td class="num my-reward">¥469,865</td></tr>
-              <tr><td class="rank">S2</td><td class="num">95%</td><td class="num">3500</td><td class="num my-reward">¥542,078</td></tr>
-              <tr><td class="rank">S3</td><td class="num">95%</td><td class="num">4000</td><td class="num my-reward">¥614,291</td></tr>
-              <tr><td class="rank">S4</td><td class="num">95%</td><td class="num">4500</td><td class="num my-reward">¥708,456</td></tr>
-              <tr><td class="rank">S5</td><td class="num">95%</td><td class="num">5000</td><td class="num my-reward">¥868,480</td></tr>
-              <tr><td class="rank">S6</td><td class="num">95%</td><td class="num">5500</td><td class="num my-reward">¥1,050,456</td></tr>
+              <tr><td class="rank">D1</td><td class="num">50</td><td class="num my-reward">¥4,603</td></tr>
+              <tr><td class="rank">D2</td><td class="num">100</td><td class="num my-reward">¥11,402</td></tr>
+              <tr><td class="rank">D3</td><td class="num">150</td><td class="num my-reward">¥19,992</td></tr>
+              <tr><td class="rank">C1</td><td class="num">400</td><td class="num my-reward">¥48,649</td></tr>
+              <tr><td class="rank">C2</td><td class="num">600</td><td class="num my-reward">¥73,589</td></tr>
+              <tr><td class="rank">C3</td><td class="num">800</td><td class="num my-reward">¥101,611</td></tr>
+              <tr><td class="rank">B1</td><td class="num">1,200</td><td class="num my-reward">¥168,162</td></tr>
+              <tr><td class="rank">B2</td><td class="num">1,400</td><td class="num my-reward">¥200,554</td></tr>
+              <tr><td class="rank">B3</td><td class="num">1,600</td><td class="num my-reward">¥226,399</td></tr>
+              <tr><td class="rank">A1</td><td class="num">1,900</td><td class="num my-reward">¥280,764</td></tr>
+              <tr><td class="rank">A2</td><td class="num">2,200</td><td class="num my-reward">¥335,676</td></tr>
+              <tr><td class="rank">A3</td><td class="num">2,500</td><td class="num my-reward">¥369,791</td></tr>
+              <tr><td class="rank">S1</td><td class="num">3,000</td><td class="num my-reward">¥469,865</td></tr>
+              <tr><td class="rank">S2</td><td class="num">3,500</td><td class="num my-reward">¥542,078</td></tr>
+              <tr><td class="rank">S3</td><td class="num">4,000</td><td class="num my-reward">¥614,291</td></tr>
+              <tr><td class="rank">S4</td><td class="num">4,500</td><td class="num my-reward">¥708,456</td></tr>
+              <tr><td class="rank">S5</td><td class="num">5,000</td><td class="num my-reward">¥868,480</td></tr>
+              <tr><td class="rank">S6</td><td class="num">5,500</td><td class="num my-reward">¥1,050,456</td></tr>
             </tbody>
           </table>
           <div class="table-note">
@@ -150,13 +235,13 @@
 
     <div class="table-container">
       <details>
-        <summary>セルフプロ プラン（Pococha）</summary>
+        <summary>セルフプロ契約</summary>
         <div class="details-content">
           <table>
             <thead>
               <tr>
                 <th>ランク</th>
-                <th>時間ダイヤ</th>
+                <th>時間<br>ダイヤ</th>
                 <th>報酬</th>
               </tr>
             </thead>
@@ -173,7 +258,7 @@
               <tr><td class="rank">A1</td><td class="num">1900</td><td class="num my-reward">¥311,959</td></tr>
               <tr><td class="rank">A2</td><td class="num">2200</td><td class="num my-reward">¥372,973</td></tr>
               <tr><td class="rank">A3</td><td class="num">2500</td><td class="num my-reward">¥410,878</td></tr>
-              <tr><td class="num">3000</td><td class="num my-reward">¥494,595</td></tr>
+              <tr><td class="rank">S1</td><td class="num">3000</td><td class="num my-reward">¥494,595</td></tr>
               <tr><td class="rank">S2</td><td class="num">3500</td><td class="num my-reward">¥570,608</td></tr>
               <tr><td class="rank">S3</td><td class="num">4000</td><td class="num my-reward">¥646,622</td></tr>
               <tr><td class="rank">S4</td><td class="num">4500</td><td class="num my-reward">¥745,743</td></tr>
@@ -188,8 +273,9 @@
         </div>
       </details>
     </div>
+  </div>
 
-  </main>
+</main>
 
   <footer class="footer">
     <div class="container">
