@@ -300,16 +300,16 @@ class="apply-form">
   </div>
 
   <div class="form-group" style="text-align: center; margin-top: 40px; margin-bottom: 0;">
-    <input 
-      type="image" 
-      src="images/apply02.png" 
-      alt="応募する" 
+    <button 
+      type="submit" 
       style="
         width: 100%;
         max-width: 560px;
         height: auto;
+        padding: 0;
         border: none;
         outline: none;
+        background: none;
         cursor: pointer;
         display: inline-block;
         transition: transform 0.2s ease, opacity 0.2s ease;
@@ -317,6 +317,8 @@ class="apply-form">
       onmouseover="this.style.transform='scale(0.98)'; this.style.opacity='0.9';"
       onmouseout="this.style.transform='scale(1)'; this.style.opacity='1';"
     >
+      <img src="images/apply02.png" alt="応募する" style="width: 100%; height: auto; display: block;">
+    </button>
   </div>
 
 </form>
@@ -394,7 +396,7 @@ class="apply-form">
         }
     });
 
-    // --- ② SNS連絡先の「片方必須」チェック処理 ---
+    // --- ② SNS連絡先の「片方必須」チェック処理（JavaScript横取りバグ完全修正版） ---
     const applyForm = document.getElementById('js-apply-form');
     const snsDetail = document.getElementById('js-sns-detail');
     const snsQr = document.getElementById('js-sns-qr');
@@ -405,10 +407,15 @@ class="apply-form">
             const hasFile = snsQr.files.length > 0;
 
             if (!hasText && !hasFile) {
+                // 入力エラーがある場合は送信を絶対に止める
                 event.preventDefault(); 
                 alert('【連絡先アカウント情報】のご入力をお願いします。\n「方法A：IDやリンクの入力」または「方法B：QRコード画像の添付」のABいずれか必須となります！');
                 snsDetail.focus();
+                return false;
             }
+            
+            // 💡【ここが重要】正常に入力されている場合は、JavaScript側で勝手にページ遷移せず、
+            // フォームの元々のaction（SSGform）へ確実にデータをPOSTさせる！
         });
     }
     
@@ -418,7 +425,7 @@ class="apply-form">
         const jobParam = urlParams.get('job');
 
         const jobSelect = document.querySelector('select[name="job_type"]');
-        const planSelect = document.querySelector('select[name="plan_type"]'); // 💡 希望プランのセレクトボックスも取得！
+        const planSelect = document.querySelector('select[name="plan_type"]'); 
 
         if (jobParam && jobSelect) {
             let targetJobValue = '';
@@ -431,12 +438,10 @@ class="apply-form">
                 targetJobValue = 'スカウト';
             }
 
-            // 職種を自動選択
             if (targetJobValue) {
                 jobSelect.value = targetJobValue;
             }
 
-            // 💡 【追加】マネージャーかスカウトの場合は、プランを「ライバー以外」に自動選択！
             if (planSelect && (jobParam === 'manager' || jobParam === 'scout')) {
                 planSelect.value = 'ライバー以外（マネージャー・スカウト等）';
             }
