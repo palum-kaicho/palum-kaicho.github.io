@@ -54,41 +54,59 @@ body.gemaris-theme {
 .app-section-block {
   margin-bottom: 50px;
 }
+/* ==========================================================================
+   📱 媒体別イメージプラカード（画像通りの公式カラーに完全修正版）
+   ========================================================================== */
+
+/* 📢 プラカードの基本構造 */
 .app-placard {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
   text-align: center !important;
-  padding: 16px 20px !important;
+  padding: 18px 20px !important;
   margin-bottom: 24px !important;
   border-radius: 8px !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
+
+/* 🍊 1枚目の画像：Palmu（鮮やかなオレンジ背景 × 白文字） */
 .app-placard.palmu-color {
-  background: linear-gradient(135deg, #b81c31 0%, #7d0d1a 100%) !important;
+  background: #ff9300 !important; /* 画像通りの鮮やかなパキッとしたオレンジ */
+  border: none !important;
 }
-.app-placard.pococha-color {
-  background: linear-gradient(135deg, #4f5d73 0%, #283142 100%) !important;
-}
-.app-logo-text {
-  font-size: 1.6rem !important;
+.app-placard.palmu-color .app-logo-text {
+  color: #ffffff !important;      /* 画像通りの真っ白な文字 */
   font-weight: 800 !important;
+  font-size: 1.7rem !important;
   letter-spacing: 0.06em !important;
-  line-height: 1.2 !important;
-  display: block !important;
-  margin: 0 auto !important;
 }
-.app-sub-text {
-  font-size: 0.8rem !important;
-  opacity: 0.95 !important;
-  margin-top: 6px !important;
+.app-placard.palmu-color .app-sub-text {
+  color: #ffffff !important;      /* サブテキストもパキッと白文字 */
+  opacity: 0.9 !important;
+  margin-top: 4px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-  display: block !important;
-  margin: 0 auto !important;
+  font-size: 0.85rem !important;
+}
+
+/* 🏳️ 2枚目の画像：Pococha（綺麗な白背景 × パキッとした黒文字） */
+.app-placard.pococha-color {
+  background: #ffffff !important; /* 画像通りの綺麗な真っ白背景 */
+  border: 1px solid #e2dcd3 !important; /* サイトに馴染む綺麗な薄い枠線 */
+}
+.app-placard.pococha-color .app-logo-text {
+  color: #111111 !important;      /* 画像通りのパキッとした黒文字 */
+  font-weight: 800 !important;
+  font-size: 1.7rem !important;
+  letter-spacing: 0.06em !important;
+}
+.app-placard.pococha-color .app-sub-text {
+  color: #555555 !important;      /* サブテキストは少し落ち着いた黒・ダークグレー */
+  margin-top: 4px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
 }
 
 /* 👑 アコーディオン（details/summary） */
