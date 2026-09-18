@@ -3,37 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemaris - Palmu ライブストリーマー事務所</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
-  
+  <title>報酬シミュレーション｜Gemaris</title>
+  <meta name="description" content="Gemaris（ジェマリス）所属ライバーのランク別報酬シミュレーション目安一覧。各配信アプリにおけるセルフプロプラン・フルサポートプランの獲得報酬額をひと目で確認できます。">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/simulation.css">
+
+  <style>
+    .rankup-table{width:100%;table-layout:fixed;border-collapse:collapse;}
+    .rankup-table th:nth-child(1),.rankup-table td:nth-child(1){width:32%;}
+    .rankup-table th:nth-child(2),.rankup-table td:nth-child(2){width:34%;}
+    .rankup-table th:nth-child(3),.rankup-table td:nth-child(3){width:34%;}
+    .rankup-table th,.rankup-table td{white-space:nowrap;}
+    .rankup-table .rankup-key td{font-weight:800;}
+    @media(max-width:768px){
+      .rankup-table th,.rankup-table td{padding:11px 5px;font-size:12px;}
+      .rankup-table .rank-lbl{font-size:12px;}
+      .rankup-table .num{font-size:12px;}
+    }
+  </style>
 </head>
 <body class="gemaris-theme">
 
+ <!-- ヘッダー -->
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html">
+      <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gemaris Logo" class="logo">
       </a>
       <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <nav class="nav-menu" id="js-nav-menu">
-        <a href="index.html">TOP</a>
-        <a href="index.html#plans">サポート・プラン</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#recruit-teaser">リクルート</a>
-        <a href="index.html#story-section">インタビュー</a>
-        <a href="index.html#staff-teaser">スタッフ</a>
-        <a href="apply.html" class="apply-btn">応募はこちら</a>
+        <ul class="nav-list">
+          <li><a href="#top" class="nav-link">TOP</a></li>
+          <li><a href="#palmu" class="nav-link">Palmu紹介</a></li>
+          <li><a href="#plan" class="nav-link">契約プラン</a></li>
+          <li><a href="#campaign" class="nav-link">キャンペーン</a></li>
+          <li><a href="#interview" class="nav-link">ライバーインタビュー</a></li>
+          <li><a href="https://lin.ee/PKv1zts" target="_blank" rel="noopener noreferrer" class="nav-link btn-nav-cta pulse-anim">LINEで応募・相談</a></li>
+        </ul>
       </nav>
     </div>
   </header>
-
   <section class="simulation-header">
     <div class="container">
       <h1>報酬シミュレーション</h1>
@@ -175,6 +188,35 @@
           </div>
         </div>
       </details>
+
+    <div class="table-container">
+      <details>
+        <summary>ランクアップ必要コイン数</summary>
+        <div class="details-content">
+          <div class="keep-table-wrapper">
+            <table class="keep-table rankup-table">
+              <thead><tr><th>ランク</th><th>必要コイン数</th><th>累計</th></tr></thead>
+              <tbody>
+                <tr><td class="rank-lbl">D → C1</td><td class="num">600</td><td class="num">600</td></tr>
+                <tr><td class="rank-lbl">C1 → C2</td><td class="num">4,415</td><td class="num">5,015</td></tr>
+                <tr><td class="rank-lbl">C2 → C3</td><td class="num">10,793</td><td class="num">15,809</td></tr>
+                <tr class="rankup-key"><td class="rank-lbl">C3 → B1</td><td class="num">21,529</td><td class="num">37,338</td></tr>
+                <tr><td class="rank-lbl">B1 → B2</td><td class="num">49,950</td><td class="num">87,288</td></tr>
+                <tr><td class="rank-lbl">B2 → B3</td><td class="num">70,650</td><td class="num">157,938</td></tr>
+                <tr class="rankup-key"><td class="rank-lbl">B3 → A1</td><td class="num">99,120</td><td class="num">257,058</td></tr>
+                <tr><td class="rank-lbl">A1 → A2</td><td class="num">148,260</td><td class="num">405,318</td></tr>
+                <tr><td class="rank-lbl">A2 → A3</td><td class="num">188,400</td><td class="num">593,718</td></tr>
+                <tr><td class="rank-lbl">A3 → A4</td><td class="num">245,400</td><td class="num">839,118</td></tr>
+                <tr><td class="rank-lbl">A4 → A5</td><td class="num">297,600</td><td class="num">1,136,718</td></tr>
+                <tr><td class="rank-lbl">A5 → S</td><td class="num">373,800</td><td class="num">1,510,518</td></tr>
+                <tr><td class="rank-lbl">S → SS</td><td class="num">546,000</td><td class="num">2,056,518</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-note">※ 累計はDランクから各ランクへ到達するまでに必要なコイン数です。</div>
+        </div>
+      </details>
+    </div>
     </div>
   </div>
 
@@ -185,10 +227,6 @@
     <div class="container">
       <div class="footer-links">
         <a href="index.html">TOP</a>
-        <a href="support.html">サポート</a>
-        <a href="plan.html">契約プラン</a>
-        <a href="recruit.html">募集要項</a>
-        <a href="staff.html">スタッフ紹介</a>
         <a href="https://lin.ee/PKv1zts" target="_blank" rel="noopener noreferrer">応募（LINE）</a>
       </div>
 
